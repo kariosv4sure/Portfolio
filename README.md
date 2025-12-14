@@ -32,16 +32,6 @@ I’m constantly learning, experimenting, and shipping.
 
 ---
 
-## 📸 Portfolio Preview
-
-> Screenshots of my live portfolio
-
-![Hero Section](./assets/hero.png)
-![Skills Section](./assets/skills.png)
-![Projects Section](./assets/projects.png)
-
----
-
 ## 🚀 Projects
 
 ### 📘 Karios Exam Genius (v1)
