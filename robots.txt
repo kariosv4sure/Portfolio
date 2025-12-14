@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://karios-portfolio.onrender.com/sitemap.xml
