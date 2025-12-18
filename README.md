@@ -1,61 +1,85 @@
-![HTML](https://img.shields.io/badge/HTML-5-orange)
-![CSS](https://img.shields.io/badge/CSS-3-blue)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-![React](https://img.shields.io/badge/React-18-blue)
-![Python](https://img.shields.io/badge/Python-3-green)
+🚀 Karios Portfolio
 
-# 🚀 Karios Portfolio
+Ifeanyichukwu Collins (Karios Vantari)
+PFJ Stack Developer — Python • Flask • JSON
 
-**Ifeanyichukwu Collins (Karios Vantari)**  
-Frontend Developer • React • Tailwind • Python • Java  
-
-🌐 **Live Portfolio:**  
-https://karios-portfolio.onrender.com  
+🌐 Live Portfolio
+https://karios-portfolio.onrender.com
 https://kariosportfolio.vercel.app
 
----
-
-## 👋 About Me
-
-I’m a frontend-focused developer passionate about building **modern, responsive, and high-performance web applications**.  
-I enjoy clean UI/UX, solid frontend engineering, and using Python & Java when backend logic is needed.
-
-I’m constantly learning, experimenting, and shipping.
 
 ---
 
-## 🛠 Tech Stack
+👋 About Me
 
-- **Frontend:** HTML, CSS, Tailwind CSS, JavaScript, React  
-- **Backend / Logic:** Python, Java  
-- **Tools:** Git, GitHub, Render, Vercel  
+I’m a PFJ Stack Developer focused on building backend-driven web applications using Python, Flask, and JSON. I create practical tools like AI-powered assistants, dashboards, and lightweight platforms backed by clean APIs and simple, responsive frontends.
 
----
+I care about functionality first, performance, and shipping real products — not just demos.
 
-## 🚀 Projects
-
-### 📘 Karios Exam Genius (v1)
-AI-powered exam assistant for Math & English with explanations.  
-🔗 https://kariosxai.onrender.com
-
-### 🚀 Karios Exam Genius (v2)
-Improved UI/UX with smarter AI integration.  
-🔗 https://kariosxaiv2.onrender.com
 
 ---
 
-## 📬 Contact
+🛠 Tech Stack
 
-- 📧 Email: [kariosvantari@gmail.com](mailto:kariosvantari@gmail.com)  
-- 🐦 X (Twitter): [@KariosVantari01](https://x.com/KariosVantari01)  
-- 💼 LinkedIn: https://www.linkedin.com/in/karios-vantari-b8b399375  
-- 💻 GitHub: https://github.com/kariosv4sure  
+Backend (PFJ Stack): Python, Flask, JSON (REST APIs)
+
+Frontend: HTML, CSS, JavaScript (clean, minimal UI)
+
+AI & APIs: External AI models, public APIs
+
+Tools & Hosting: Git, GitHub, Render, Vercel
+
+
 
 ---
 
-## 🧠 Note
+🚀 Projects
 
-This portfolio is built with **pure HTML, CSS, and JavaScript** for speed, SEO, and simplicity.  
-Hosted on **Render & Vercel**.
+🌐 Karios Portfolio
 
-© 2025 — Built with 💚 by Karios Vantari
+Personal developer portfolio showcasing my PFJ stack projects and experiments. 🔗 https://karios-portfolio.onrender.com
+
+✂️ KV Mini Links
+
+A lightweight Flask-based link shortener built with JSON routing and backend logic. 🔗 https://kv-mini-links.onrender.com
+
+🤖 KariosX AI (v2)
+
+AI-powered exam and learning assistant built with Flask, JSON APIs, and AI integration. 🔗 https://karios-x-ai-v2.onrender.com
+
+📈 KV Dominate
+
+Cryptocurrency dashboard showing live prices and crypto news using external APIs. 🔗 https://kv-dominate.onrender.com
+
+🧠 KariosX AI (v1)
+
+First version of KariosX AI focused on Maths and English assistance for students. 🔗 https://kariosxai.onrender.com
+
+🗣 Talk-KV
+
+A private AI diary where users can talk freely, reflect, and feel heard. 🔗 https://talk-kv.onrender.com
+
+
+---
+
+📬 Contact
+
+📧 Email: kariosvantari@gmail.com
+
+🐦 X (Twitter): @KariosVantari01
+
+💼 LinkedIn: https://www.linkedin.com/in/karios-vantari-b8b399375
+
+💻 GitHub: https://github.com/kariosv4sure
+
+
+
+---
+
+📝 Note
+
+
+This portfolio is built with *pure HTML, CSS, and JavaScript* for speed, SEO, and simplicity.
+Hosted on *Render & Vercel*.
+
+© 2025 — Built with 💚 by Ifeanyichukwu Collins Chibueze
