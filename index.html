@@ -9,13 +9,17 @@
   <link rel="apple-touch-icon" href="/favicon.png">
   <meta name="theme-color" content="#37ff8b">
 
-  <title>Ifeanyichukwu Collins (Karios Vantari) | Frontend Developer Portfolio</title>
-  <meta name="description" content="Portfolio of Ifeanyichukwu Collins, Karios Vantari. Frontend Developer, React, Tailwind, Python, Bash. Projects, skills, contact." />
+  <title>Ifeanyichukwu Collins | Full-Stack Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Ifeanyichukwu Collins. Full-Stack Developer specializing in Flask, Django, AI integration, and modern web applications." />
 
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
     :root{
       --bg:#0b0f14; --panel:#0f1520; --text:#eaf2ff;
@@ -34,9 +38,10 @@
     h3{margin-bottom:6px;}
     p{color:var(--muted);}
     .cta{margin-top:24px;display:flex;flex-wrap:wrap;gap:14px;}
-    .btn{padding:12px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:#0d131c;color:#fff;transition:0.3s;}
+    .btn{padding:12px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:#0d131c;color:#fff;transition:0.3s;cursor:pointer;}
     .btn.primary{border-color:var(--neon);background:rgba(55,255,139,.15);}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;}
+    .btn.hire{border-color:var(--neon2);background:rgba(76,201,240,.15);}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;}
     .card{
       background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
       border-radius:var(--radius);padding:22px;
@@ -49,6 +54,38 @@
     }
     .card.visible{transform: translateY(0);opacity:1;}
     footer{text-align:center;color:#9fb0c3;font-size:14px;margin-bottom:40px;}
+    .tech-badge {
+      display: inline-block;
+      background: rgba(55,255,139,0.1);
+      border: 1px solid var(--neon);
+      border-radius: 20px;
+      padding: 2px 8px;
+      font-size: 0.7rem;
+      margin-top: 8px;
+      color: var(--neon);
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    .contact-link i {
+      font-size: 1.3rem;
+    }
+    .contact-link:hover {
+      color: var(--neon);
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
@@ -67,14 +104,20 @@
   <!-- HERO -->
   <main>
     <section class="hero" aria-labelledby="intro-heading">
-      <p><strong>Frontend Developer • React • Tailwind • Python • Bash</strong></p>
+      <p><strong>Full-Stack Developer • Flask • Django • AI Integration</strong></p>
       <h1 id="intro-heading">Hello, I’m <span id="type" style="color:var(--neon)"></span></h1>
-      <p>I build modern, responsive, high‑performance web apps with clean UI/UX and automation.</p>
-      <p>I love shipping fast, SEO-friendly products that actually solve problems.</p>
+      <p>I build full-stack web applications with AI integration, user authentication, admin dashboards, and clean UI/UX.</p>
+      <p>From exam preparation platforms to e-commerce stores and AI chatbots — I ship fast and solve real problems.</p>
       <div class="cta">
-        <a class="btn primary" href="mailto:kariosvantari@gmail.com">Email Me</a>
-        <a class="btn" href="tel:+2347084007921">Call Me</a>
-        <a class="btn" href="https://github.com/kariosv4sure" target="_blank">GitHub</a>
+        <a class="btn primary" href="mailto:ifeanyichukwucollins008@gmail.com">
+          <i class="fas fa-envelope"></i> Email Me
+        </a>
+        <a class="btn hire" href="#contact">
+          <i class="fas fa-briefcase"></i> HIRE ME
+        </a>
+        <a class="btn" href="https://github.com/kariosv4sure" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
       </div>
     </section>
 
@@ -82,12 +125,12 @@
     <section id="skills" aria-labelledby="skills-heading">
       <h2 id="skills-heading">Technical Skills</h2>
       <div class="grid">
-        <div class="card"> <h3>HTML</h3> <p>Semantic, accessible, SEO‑optimized markup.</p> </div>
-        <div class="card"> <h3>CSS / Tailwind</h3> <p>Utility-first styling for responsive layouts.</p> </div>
-        <div class="card"> <h3>JavaScript</h3> <p>Dynamic, interactive client-side logic.</p> </div>
-        <div class="card"> <h3>React</h3> <p>Component-based scalable frontend apps.</p> </div>
-        <div class="card"> <h3>Python</h3> <p>Scripting, backend logic, automation, AI workflows.</p> </div>
-        <div class="card"> <h3>Bash Scripting</h3> <p>Linux automation, CLI tooling, deployment scripts.</p> </div>
+        <div class="card"> <h3>HTML / CSS / Tailwind</h3> <p>Semantic markup, responsive design, utility-first styling.</p> </div>
+        <div class="card"> <h3>JavaScript / React</h3> <p>Dynamic frontend, component-based architecture.</p> </div>
+        <div class="card"> <h3>Python / Flask / Django</h3> <p>Backend APIs, authentication, database integration.</p> </div>
+        <div class="card"> <h3>PostgreSQL / SQLite</h3> <p>Database design, queries, migrations.</p> </div>
+        <div class="card"> <h3>AI Integration</h3> <p>Chatbots, AI assistants, intelligent automation.</p> </div>
+        <div class="card"> <h3>Git / Bash / Deployment</h3> <p>Version control, automation, Render/Vercel deployment.</p> </div>
       </div>
     </section>
 
@@ -96,50 +139,90 @@
       <h2 id="projects-heading">Projects</h2>
       <div class="grid">
         <article class="card">
-          <h3>Karios Exam Genius (v1)</h3>
-          <p>AI-powered exam assistant with Python & Flask. Handles questions, explanations, and JSON responses.</p>
-          <a href="https://kariosxai.onrender.com" target="_blank">View Project</a>
+          <h3>Evolution Media</h3>
+          <p>Full-stack exam preparation platform with AI chat assistant, user authentication, admin dashboard, and WhatsApp integration. Helped over 25,000 students.</p>
+          <span class="tech-badge">Flask</span>
+          <span class="tech-badge">PostgreSQL</span>
+          <span class="tech-badge">AI</span>
+          <br>
+          <a href="https://evolution-media.onrender.com" target="_blank">View Project</a>
         </article>
 
         <article class="card">
-          <h3>Karios Exam Genius (v2)</h3>
-          <p>Smarter AI learning platform with better UI/UX and structured JSON API.</p>
+          <h3>IAE Official Website</h3>
+          <p>Educational platform with AI assistant, PDF resources, and admin panel. Provides JAMB/WAEC preparation materials and admission guidance.</p>
+          <span class="tech-badge">Flask</span>
+          <span class="tech-badge">PostgreSQL</span>
+          <span class="tech-badge">AI</span>
+          <br>
+          <a href="https://iae-exam-info.onrender.com" target="_blank">View Project</a>
+        </article>
+
+        <article class="card">
+          <h3>Miss Tristin</h3>
+          <p>AI chatbot with personality — a sassy digital companion that roasts, flirts, and entertains users with witty banter.</p>
+          <span class="tech-badge">Flask</span>
+          <span class="tech-badge">AI</span>
+          <br>
+          <a href="https://miss-tristin.onrender.com" target="_blank">View Project</a>
+        </article>
+
+        <article class="card">
+          <h3>Melody Store</h3>
+          <p>E-commerce platform for digital accounts with payment integration and instant delivery. Sells verified social media accounts and digital services.</p>
+          <span class="tech-badge">Flask</span>
+          <span class="tech-badge">Payment Integration</span>
+          <br>
+          <a href="https://melody-store.onrender.com" target="_blank">View Project</a>
+        </article>
+
+        <article class="card">
+          <h3>Karios Exam Genius</h3>
+          <p>AI-powered exam assistant helping students prepare for JAMB and WAEC with smart responses and structured content.</p>
+          <span class="tech-badge">Flask</span>
+          <span class="tech-badge">AI</span>
+          <br>
           <a href="https://karios-x-ai-v2.onrender.com" target="_blank">View Project</a>
         </article>
 
         <article class="card">
-          <h3>KV Mini Links</h3>
-          <p>Lightweight Flask link-in-bio app with JSON config for fast updates.</p>
-          <a href="https://kv-mini-links.onrender.com" target="_blank">View Project</a>
-        </article>
-
-        <article class="card">
-          <h3>KV Dominate</h3>
-          <p>Experimental Flask app for bold UI, routing, and backend content testing.</p>
-          <a href="https://kv-dominate.onrender.com" target="_blank">View Project</a>
-        </article>
-
-        <article class="card">
-          <h3>Talk-KV</h3>
-          <p>Chat-style Flask app with JSON messaging, request handling, simple conversation logic.</p>
-          <a href="https://talk-kv.onrender.com" target="_blank">View Project</a>
-        </article>
-
-        <article class="card">
           <h3>Karios Portfolio</h3>
-          <p>My own portfolio, fast, SEO-optimized, showcasing PFJ stack projects live.</p>
+          <p>My personal portfolio — fast, SEO-optimized, showcasing all my projects and skills in one place.</p>
+          <span class="tech-badge">HTML/CSS/JS</span>
+          <br>
           <a href="https://karios-portfolio.onrender.com" target="_blank">View Project</a>
         </article>
+      </div>
+    </section>
+
+    <!-- CONTACT / HIRE ME SECTION -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" style="text-align:center;">Let's Work Together</h2>
+      <div class="contact-links">
+        <a href="https://t.me/Dev_Collins101" target="_blank" class="contact-link">
+          <i class="fab fa-telegram"></i> Telegram
+        </a>
+        <a href="mailto:ifeanyichukwucollins008@gmail.com" class="contact-link">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+        <a href="https://github.com/kariosv4sure" target="_blank" class="contact-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+      <div style="text-align: center; margin-top: 24px;">
+        <a href="mailto:ifeanyichukwucollins008@gmail.com" class="btn hire" style="display: inline-flex; align-items: center; gap: 8px;">
+          <i class="fas fa-briefcase"></i> HIRE ME
+        </a>
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer>© 2025 Built with 💚 by Ifeanyichukwu Collins</footer>
+  <footer>© 2026 Built with 💚 by Ifeanyichukwu Collins | Full-Stack Developer | 15+ Live Projects</footer>
 
   <!-- TYPEWRITER -->
   <script>
-    const words=["Ifeanyichukwu Collins","A Frontend Developer","A React Enthusiast","A Python & Bash Scripter","A Linux Automation Nerd"];
+    const words=["Ifeanyichukwu Collins","A Full-Stack Developer","A Flask & Django Dev","An AI Integration Expert","A Problem Solver"];
     const el=document.getElementById("type");
     let i=0,j=0,del=false;
     function tick(){
@@ -165,3 +248,4 @@
   </script>
 </body>
 </html>
+
