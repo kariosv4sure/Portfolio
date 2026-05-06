@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  
+  <title>Contact | Ifeanyichukwu Collins - Let's Build Something</title>
+  <meta name="description" content="Contact Ifeanyichukwu Collins for full-stack development, AI integration, Telegram bots, or backend systems. WhatsApp for fast response." />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neon: '#37ff8b',
+            blue: '#4cc9f0',
+            dark: '#0b0f14',
+            panel: '#0f1520',
+          },
+          fontFamily: {
+            space: ['Space Grotesk', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Space Grotesk', sans-serif; background: #0b0f14; color: #eaf2ff; overflow-x: hidden; }
+    
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0b0f14; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #37ff8b, #4cc9f0); border-radius: 3px; }
+
+    .card-glow-green {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-glow-green:hover {
+      box-shadow: 0 0 40px rgba(55, 255, 139, 0.5), 0 0 80px rgba(55, 255, 139, 0.3);
+      border-color: rgba(55, 255, 139, 0.8);
+      transform: translateY(-8px);
+    }
+    
+    .card-glow-blue {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-glow-blue:hover {
+      box-shadow: 0 0 40px rgba(76, 201, 240, 0.5), 0 0 80px rgba(76, 201, 240, 0.3);
+      border-color: rgba(76, 201, 240, 0.8);
+      transform: translateY(-8px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-neon/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="text-lg sm:text-xl font-bold bg-gradient-to-r from-neon to-blue bg-clip-text text-transparent">Ifeanyichukwu 🔅</a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-sm text-gray-300 hover:text-neon transition-colors">Home</a>
+          <a href="about.html" class="text-sm text-gray-300 hover:text-neon transition-colors">About</a>
+          <a href="projects.html" class="text-sm text-gray-300 hover:text-neon transition-colors">Projects</a>
+          <a href="contact.html" class="text-sm text-neon font-medium">Contact</a>
+        </div>
+        <button id="menuBtn" class="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-transparent border-0 cursor-pointer">
+          <span class="block w-6 h-0.5 bg-neon transition-all duration-300" id="line1"></span>
+          <span class="block w-6 h-0.5 bg-neon transition-all duration-300" id="line2"></span>
+          <span class="block w-6 h-0.5 bg-neon transition-all duration-300" id="line3"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobileMenu" class="md:hidden bg-dark/98 backdrop-blur-xl fixed top-16 left-0 right-0 bottom-0 z-49" style="transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+    <div class="flex flex-col items-center justify-center h-full gap-6 px-4">
+      <a href="index.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors py-2">Home</a>
+      <a href="about.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors py-2">About</a>
+      <a href="projects.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors py-2">Projects</a>
+      <a href="contact.html" class="mobile-link text-2xl font-semibold text-neon py-2">Contact</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="pt-28 pb-8 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-neon/5 border border-neon/20 rounded-full mb-6">
+        <span class="w-2 h-2 bg-neon rounded-full animate-pulse"></span>
+        <p class="text-neon font-mono text-sm tracking-wider">OPEN TO WORK</p>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Let's <span class="text-neon">Build</span></h1>
+      <p class="text-gray-400 text-lg">Direct communication. No forms that vanish into the void.</p>
+    </div>
+  </section>
+
+  <!-- WHO SHOULD CONTACT + WHY -->
+  <section class="py-8 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid sm:grid-cols-2 gap-6 mb-12">
+        
+        <!-- Who -->
+        <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-neon/10 rounded-xl flex items-center justify-center">
+              <i class="fas fa-users text-xl text-neon"></i>
+            </div>
+            <h2 class="text-xl font-bold">Who <span class="text-neon">Should</span> Contact Me</h2>
+          </div>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-neon mt-1 flex-shrink-0"></i>
+              <span><strong class="text-white">Startups & founders</strong> who need an MVP built fast — not in months, in days.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-neon mt-1 flex-shrink-0"></i>
+              <span><strong class="text-white">Businesses</strong> wanting custom bots (Telegram, AI chatbots) or automation systems.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-neon mt-1 flex-shrink-0"></i>
+              <span><strong class="text-white">Developers/teams</strong> who need a backend engineer for their Flask/Django projects.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-check-circle text-neon mt-1 flex-shrink-0"></i>
+              <span><strong class="text-white">Anyone</strong> with a real project, not just an "idea" — I build, not brainstorm.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Why -->
+        <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-6 sm:p-8">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-blue/10 rounded-xl flex items-center justify-center">
+              <i class="fas fa-star text-xl text-blue"></i>
+            </div>
+            <h2 class="text-xl font-bold">Why <span class="text-blue">Work</span> With Me</h2>
+          </div>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li class="flex items-start gap-2">
+              <i class="fas fa-bolt text-blue mt-1 flex-shrink-0"></i>
+              <span><strong class="text-white">Speed:</strong> I ship fast. First version often within 48-72 hours depending on scope.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-cogs text-blue mt-1 flex-shrink-0"></i>
+              <span><strong class="text-white">Systems approach:</strong> I don't just code features. I think database, API, UI — the whole chain.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-comments text-blue mt-1 flex-shrink-0"></i>
+              <span><strong class="text-white">No BS communication:</strong> I'll tell you what's possible, what's not, and what's a bad idea. Directly.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i class="fas fa-fire text-blue mt-1 flex-shrink-0"></i>
+              <span><strong class="text-white">Actually deployed:</strong> My stuff runs on real servers, not just localhost. I deploy, you see results.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT METHODS -->
+  <section class="py-8 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-8">How to <span class="text-neon">Reach Me</span></h2>
+      
+      <!-- WhatsApp - Primary -->
+      <div class="card-glow-green bg-panel/60 border-2 border-neon/30 rounded-2xl p-6 sm:p-8 mb-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-neon text-black px-4 py-1 text-xs font-bold rounded-bl-xl">FASTEST</div>
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fab fa-whatsapp text-2xl text-green-400"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">WhatsApp</h3>
+            <p class="text-gray-400 text-sm">Direct line to me. Best for project inquiries and quick back-and-forth. Response within hours, not days.</p>
+          </div>
+        </div>
+        <a href="https://wa.me/2348089368681?text=Hey%20Collins,%20I%20have%20a%20project%20I'd%20like%20to%20discuss." target="_blank" class="block w-full text-center py-4 bg-green-500 text-white rounded-xl font-semibold hover:bg-green-600 hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-all">
+          <i class="fab fa-whatsapp mr-2"></i> Message on WhatsApp
+        </a>
+      </div>
+
+      <!-- Telegram -->
+      <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-6 sm:p-8 mb-6">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <i class="fab fa-telegram-plane text-2xl text-blue-400"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold">Telegram</h3>
+            <p class="text-gray-400 text-sm">Also fast. Good for tech talk, bot discussions, or if you just prefer Telegram.</p>
+          </div>
+        </div>
+        <a href="https://t.me/DevCollins101" target="_blank" class="block w-full text-center py-4 bg-blue-500/10 border-2 border-blue-400 text-blue-400 rounded-xl font-semibold hover:bg-blue-500 hover:text-white transition-all">
+          <i class="fab fa-telegram-plane mr-2"></i> Message on Telegram
+        </a>
+      </div>
+
+      <!-- Quick Form -->
+      <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-6 sm:p-8">
+        <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+          <i class="fas fa-envelope text-neon"></i> Drop a Message
+        </h3>
+        <p class="text-gray-400 text-sm mb-6">Prefer a slower, more detailed intro? Fill this out and I'll get back to you.</p>
+        <form action="https://formsubmit.co/ifeanyichukwucollins008@gmail.com" method="POST" class="space-y-4">
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://karios-portfolio.onrender.com/thanks.html">
+          
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+              <input type="text" name="name" required placeholder="What should I call you?" class="w-full px-4 py-3 bg-dark border border-neon/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon/50 transition-all text-sm" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-300 mb-2">Budget Range</label>
+              <select name="budget" class="w-full px-4 py-3 bg-dark border border-neon/20 rounded-xl text-white focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon/50 transition-all text-sm">
+                <option value="" class="bg-dark">Select (optional)</option>
+                <option value="small" class="bg-dark">Under ₦100k</option>
+                <option value="medium" class="bg-dark">₦100k - ₦500k</option>
+                <option value="large" class="bg-dark">₦500k - ₦2M</option>
+                <option value="enterprise" class="bg-dark">₦2M+ / Enterprise</option>
+                <option value="discuss" class="bg-dark">Let's discuss</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Project Type</label>
+            <select name="project_type" class="w-full px-4 py-3 bg-dark border border-neon/20 rounded-xl text-white focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon/50 transition-all text-sm">
+              <option value="" class="bg-dark">What do you need?</option>
+              <option value="backend" class="bg-dark">Backend API / System</option>
+              <option value="bot" class="bg-dark">Telegram Bot / AI Chatbot</option>
+              <option value="fullstack" class="bg-dark">Full-Stack Web App</option>
+              <option value="automation" class="bg-dark">Automation / Integration</option>
+              <option value="other" class="bg-dark">Something Else</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Tell Me About Your Project</label>
+            <textarea name="message" rows="4" required placeholder="What are you trying to build? The more detail, the better I can help." class="w-full px-4 py-3 bg-dark border border-neon/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon/50 transition-all text-sm resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full py-4 bg-neon/10 border-2 border-neon text-neon rounded-xl font-semibold hover:bg-neon hover:text-black transition-all duration-300 hover:shadow-[0_0_35px_rgba(55,255,139,0.6)]">
+            <i class="fas fa-paper-plane mr-2"></i> Send Message
+          </button>
+          <p class="text-gray-500 text-xs text-center mt-2">
+            <i class="fas fa-shield-alt mr-1"></i> Your message goes straight to my inbox. No spam, no mailing lists.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIND ME ELSEWHERE -->
+  <section class="py-12 px-4 border-t border-neon/10">
+    <div class="max-w-2xl mx-auto text-center">
+      <h3 class="text-sm font-mono text-gray-500 mb-6 tracking-wider">FIND ME ELSEWHERE</h3>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="https://github.com/kariosv4sure" target="_blank" class="px-5 py-2.5 bg-panel/60 border border-neon/20 text-neon rounded-full text-sm hover:bg-neon hover:text-black transition-all">
+          <i class="fab fa-github mr-2"></i>GitHub
+        </a>
+        <a href="https://x.com/kariosv4sure" target="_blank" class="px-5 py-2.5 bg-panel/60 border border-white/20 text-white rounded-full text-sm hover:border-neon hover:text-neon transition-all">
+          <i class="fab fa-x-twitter mr-2"></i>Twitter/X
+        </a>
+        <a href="https://linkedin.com/in/collins-ifeanyichukwu-b8b399375" target="_blank" class="px-5 py-2.5 bg-panel/60 border border-blue/20 text-blue rounded-full text-sm hover:bg-blue hover:text-black transition-all">
+          <i class="fab fa-linkedin-in mr-2"></i>LinkedIn
+        </a>
+        <a href="https://www.instagram.com/devcollins101" target="_blank" class="px-5 py-2.5 bg-panel/60 border border-white/20 text-white rounded-full text-sm hover:border-neon hover:text-neon transition-all">
+          <i class="fab fa-instagram mr-2"></i>Instagram
+        </a>
+        <a href="https://www.tiktok.com/@dev_collins101" target="_blank" class="px-5 py-2.5 bg-panel/60 border border-white/20 text-white rounded-full text-sm hover:border-neon hover:text-neon transition-all">
+          <i class="fab fa-tiktok mr-2"></i>TikTok
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-neon/10">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="text-gray-500 text-sm">© 2026 <span class="text-neon font-semibold">Ifeanyichukwu Collins</span></p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+    const line3 = document.getElementById('line3');
+    let menuOpen = false;
+    function openMenu() {
+      menuOpen = true;
+      mobileMenu.style.transform = 'translateX(0)';
+      line1.style.transform = 'rotate(45deg) translateY(6.5px)';
+      line2.style.opacity = '0';
+      line3.style.transform = 'rotate(-45deg) translateY(-6.5px)';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      menuOpen = false;
+      mobileMenu.style.transform = 'translateX(100%)';
+      line1.style.transform = 'rotate(0deg) translateY(0)';
+      line2.style.opacity = '1';
+      line3.style.transform = 'rotate(0deg) translateY(0)';
+      document.body.style.overflow = '';
+    }
+    menuBtn.addEventListener('click', () => menuOpen ? closeMenu() : openMenu());
+    document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMenu));
+  </script>
+</body>
+</html>

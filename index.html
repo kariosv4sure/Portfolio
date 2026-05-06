@@ -2,250 +2,641 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- FAVICON -->
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/favicon.png">
-  <meta name="theme-color" content="#37ff8b">
-
-  <title>Ifeanyichukwu Collins | Full-Stack Developer Portfolio</title>
-  <meta name="description" content="Portfolio of Ifeanyichukwu Collins. Full-Stack Developer specializing in Flask, Django, AI integration, and modern web applications." />
-
-  <!-- FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Ifeanyichukwu Collins | Full-Stack Developer & AI Engineer</title>
+  <meta name="description" content="Full-Stack Developer specializing in Flask, Django, AI Integration & Modern Web Apps. Building powerful backend systems, beautiful frontends, and intelligent AI-powered applications." />
+  <meta name="keywords" content="full-stack developer, flask developer, django developer, AI engineer, python developer, web developer, Ifeanyichukwu Collins, kariosv4sure" />
   
+  <meta property="og:title" content="Ifeanyichukwu Collins | Full-Stack Developer & AI Engineer" />
+  <meta property="og:description" content="Full-Stack Developer specializing in Flask, Django, AI Integration & Modern Web Apps" />
+  <meta property="og:url" content="https://karios-portfolio.onrender.com/" />
+  <meta property="og:type" content="website" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ifeanyichukwu Collins | Full-Stack Developer" />
+  
+  <link rel="canonical" href="https://karios-portfolio.onrender.com/" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neon: '#37ff8b',
+            blue: '#4cc9f0',
+            dark: '#0b0f14',
+            panel: '#0f1520',
+          },
+          fontFamily: {
+            space: ['Space Grotesk', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    :root{
-      --bg:#0b0f14; --panel:#0f1520; --text:#eaf2ff;
-      --muted:#9fb0c3; --neon:#37ff8b; --neon2:#4cc9f0; --radius:22px;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Space Grotesk', sans-serif; 
+      background: #0b0f14; 
+      color: #eaf2ff; 
+      overflow-x: hidden;
     }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Space Grotesk,system-ui,sans-serif;line-height:1.6;}
-    a{color:var(--neon);text-decoration:none;transition:0.2s;}
-    a:hover{opacity:1;}
-    header,main,footer{max-width:1150px;margin:auto;padding:24px;}
-    nav{display:flex;justify-content:space-between;align-items:center;gap:16px;}
-    nav a{margin-left:12px;color:var(--text);opacity:.85;}
-    .hero{padding:80px 0;}
-    h1{font-size:clamp(34px,5vw,56px);line-height:1.1;margin-bottom:16px;}
-    h2{margin-top:64px;font-size:30px;color:var(--neon2);}
-    h3{margin-bottom:6px;}
-    p{color:var(--muted);}
-    .cta{margin-top:24px;display:flex;flex-wrap:wrap;gap:14px;}
-    .btn{padding:12px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:#0d131c;color:#fff;transition:0.3s;cursor:pointer;}
-    .btn.primary{border-color:var(--neon);background:rgba(55,255,139,.15);}
-    .btn.hire{border-color:var(--neon2);background:rgba(76,201,240,.15);}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;}
-    .card{
-      background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-      border-radius:var(--radius);padding:22px;
-      transform: translateY(20px); opacity:0;
-      transition: transform 0.6s ease-out, opacity 0.6s ease-out, box-shadow 0.3s ease, transform 0.3s ease;
+    
+    .typewriter-cursor::after {
+      content: '|';
+      animation: blink 1s step-end infinite;
+      color: #37ff8b;
+      font-weight: 300;
     }
-    .card:hover{
-      transform: scale(1.05);
-      box-shadow: 0 0 20px var(--neon),0 0 40px var(--neon2);
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
-    .card.visible{transform: translateY(0);opacity:1;}
-    footer{text-align:center;color:#9fb0c3;font-size:14px;margin-bottom:40px;}
-    .tech-badge {
-      display: inline-block;
-      background: rgba(55,255,139,0.1);
-      border: 1px solid var(--neon);
-      border-radius: 20px;
-      padding: 2px 8px;
-      font-size: 0.7rem;
-      margin-top: 8px;
-      color: var(--neon);
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0b0f14; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #37ff8b, #4cc9f0); border-radius: 3px; }
+
+    .card-glow-green {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 32px;
-      flex-wrap: wrap;
+    .card-glow-green:hover {
+      box-shadow: 0 0 40px rgba(55, 255, 139, 0.5), 0 0 80px rgba(55, 255, 139, 0.3);
+      border-color: rgba(55, 255, 139, 0.8);
+      transform: translateY(-8px);
     }
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text);
-      font-size: 1rem;
-      transition: 0.3s;
+    
+    .card-glow-blue {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .contact-link i {
-      font-size: 1.3rem;
+    .card-glow-blue:hover {
+      box-shadow: 0 0 40px rgba(76, 201, 240, 0.5), 0 0 80px rgba(76, 201, 240, 0.3);
+      border-color: rgba(76, 201, 240, 0.8);
+      transform: translateY(-8px);
     }
-    .contact-link:hover {
-      color: var(--neon);
-      transform: translateY(-2px);
+
+    .glow-avatar {
+      animation: avatarGlow 3s ease-in-out infinite;
+    }
+    @keyframes avatarGlow {
+      0%, 100% { box-shadow: 0 0 40px rgba(55, 255, 139, 0.4); }
+      50% { box-shadow: 0 0 80px rgba(55, 255, 139, 0.7), 0 0 120px rgba(76, 201, 240, 0.4); }
+    }
+
+    #mobileMenu {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 49;
+      transform: translateX(100%);
+      visibility: visible;
+      opacity: 1;
     }
   </style>
 </head>
-<body>
-  <!-- NAV -->
-  <header>
-    <nav aria-label="Main Navigation">
-      <strong>Ifeanyichukwu Collins</strong>
-      <div>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+<body class="relative">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-neon/10 transition-shadow">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="text-lg sm:text-xl font-bold bg-gradient-to-r from-neon to-blue bg-clip-text text-transparent hover:opacity-80 transition-opacity z-50">
+          Ifeanyichukwu 🔅 
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="about.html" class="text-sm text-gray-300 hover:text-neon transition-colors font-medium">About</a>
+          <a href="projects.html" class="text-sm text-gray-300 hover:text-neon transition-colors font-medium">Projects</a>
+          <a href="contact.html" class="text-sm text-gray-300 hover:text-neon transition-colors font-medium">Contact</a>
+          <a href="contact.html" class="px-5 py-2.5 bg-neon/10 border-2 border-neon text-neon rounded-full text-sm font-semibold hover:bg-neon hover:text-black transition-all hover:shadow-[0_0_30px_rgba(55,255,139,0.5)]">
+            <i class="fas fa-handshake mr-2"></i>Hire Me
+          </a>
+        </div>
+
+        <!-- Hamburger Button -->
+        <button id="menuBtn" class="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none bg-transparent border-0 cursor-pointer">
+          <span class="block w-6 h-0.5 bg-neon transition-all duration-300 origin-center" id="line1"></span>
+          <span class="block w-6 h-0.5 bg-neon transition-all duration-300 origin-center" id="line2"></span>
+          <span class="block w-6 h-0.5 bg-neon transition-all duration-300 origin-center" id="line3"></span>
+        </button>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
-  <!-- HERO -->
-  <main>
-    <section class="hero" aria-labelledby="intro-heading">
-      <p><strong>Full-Stack Developer • Flask • Django • AI Integration</strong></p>
-      <h1 id="intro-heading">Hello, I’m <span id="type" style="color:var(--neon)"></span></h1>
-      <p>I build full-stack web applications with AI integration, user authentication, admin dashboards, and clean UI/UX.</p>
-      <p>From exam preparation platforms to e-commerce stores and AI chatbots — I ship fast and solve real problems.</p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:ifeanyichukwucollins008@gmail.com">
-          <i class="fas fa-envelope"></i> Email Me
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu" class="md:hidden bg-dark/98 backdrop-blur-xl">
+    <div class="flex flex-col items-center justify-center h-full gap-6 px-4 overflow-y-auto">
+      <p class="text-neon font-mono text-sm mb-4">NAVIGATION</p>
+      <a href="about.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors flex items-center gap-3 py-2">
+        <i class="fas fa-user-astronaut text-neon"></i> About Me
+      </a>
+      <a href="projects.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors flex items-center gap-3 py-2">
+        <i class="fas fa-code-branch text-blue"></i> Projects
+      </a>
+      <a href="contact.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors flex items-center gap-3 py-2">
+        <i class="fas fa-envelope text-neon"></i> Contact
+      </a>
+      <div class="w-32 h-px bg-gradient-to-r from-transparent via-neon/50 to-transparent my-2"></div>
+      <a href="contact.html" class="mobile-link px-8 py-3 bg-neon text-black rounded-full font-semibold text-lg hover:shadow-[0_0_40px_rgba(55,255,139,0.7)] transition-all">
+        <i class="fas fa-rocket mr-2"></i> Hire Me
+      </a>
+      
+      <div class="flex gap-4 mt-8">
+        <a href="https://github.com/kariosv4sure" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-neon/30 text-neon hover:bg-neon hover:text-black transition-all">
+          <i class="fab fa-github text-xl"></i>
         </a>
-        <a class="btn hire" href="#contact">
-          <i class="fas fa-briefcase"></i> HIRE ME
+        <a href="https://linkedin.com/in/collins-ifeanyichukwu-b8b399375" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-blue/30 text-blue hover:bg-blue hover:text-black transition-all">
+          <i class="fab fa-linkedin-in text-xl"></i>
         </a>
-        <a class="btn" href="https://github.com/kariosv4sure" target="_blank">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Technical Skills</h2>
-      <div class="grid">
-        <div class="card"> <h3>HTML / CSS / Tailwind</h3> <p>Semantic markup, responsive design, utility-first styling.</p> </div>
-        <div class="card"> <h3>JavaScript / React</h3> <p>Dynamic frontend, component-based architecture.</p> </div>
-        <div class="card"> <h3>Python / Flask / Django</h3> <p>Backend APIs, authentication, database integration.</p> </div>
-        <div class="card"> <h3>PostgreSQL / SQLite</h3> <p>Database design, queries, migrations.</p> </div>
-        <div class="card"> <h3>AI Integration</h3> <p>Chatbots, AI assistants, intelligent automation.</p> </div>
-        <div class="card"> <h3>Git / Bash / Deployment</h3> <p>Version control, automation, Render/Vercel deployment.</p> </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Evolution Media</h3>
-          <p>Full-stack exam preparation platform with AI chat assistant, user authentication, admin dashboard, and WhatsApp integration. Helped over 25,000 students.</p>
-          <span class="tech-badge">Flask</span>
-          <span class="tech-badge">PostgreSQL</span>
-          <span class="tech-badge">AI</span>
-          <br>
-          <a href="https://evolution-media.onrender.com" target="_blank">View Project</a>
-        </article>
-
-        <article class="card">
-          <h3>IAE Official Website</h3>
-          <p>Educational platform with AI assistant, PDF resources, and admin panel. Provides JAMB/WAEC preparation materials and admission guidance.</p>
-          <span class="tech-badge">Flask</span>
-          <span class="tech-badge">PostgreSQL</span>
-          <span class="tech-badge">AI</span>
-          <br>
-          <a href="https://iae-exam-info.onrender.com" target="_blank">View Project</a>
-        </article>
-
-        <article class="card">
-          <h3>Miss Tristin</h3>
-          <p>AI chatbot with personality — a sassy digital companion that roasts, flirts, and entertains users with witty banter.</p>
-          <span class="tech-badge">Flask</span>
-          <span class="tech-badge">AI</span>
-          <br>
-          <a href="https://miss-tristin.onrender.com" target="_blank">View Project</a>
-        </article>
-
-        <article class="card">
-          <h3>Melody Store</h3>
-          <p>E-commerce platform for digital accounts with payment integration and instant delivery. Sells verified social media accounts and digital services.</p>
-          <span class="tech-badge">Flask</span>
-          <span class="tech-badge">Payment Integration</span>
-          <br>
-          <a href="https://melody-store.onrender.com" target="_blank">View Project</a>
-        </article>
-
-        <article class="card">
-          <h3>Karios Exam Genius</h3>
-          <p>AI-powered exam assistant helping students prepare for JAMB and WAEC with smart responses and structured content.</p>
-          <span class="tech-badge">Flask</span>
-          <span class="tech-badge">AI</span>
-          <br>
-          <a href="https://karios-x-ai-v2.onrender.com" target="_blank">View Project</a>
-        </article>
-
-        <article class="card">
-          <h3>Karios Portfolio</h3>
-          <p>My personal portfolio — fast, SEO-optimized, showcasing all my projects and skills in one place.</p>
-          <span class="tech-badge">HTML/CSS/JS</span>
-          <br>
-          <a href="https://karios-portfolio.onrender.com" target="_blank">View Project</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT / HIRE ME SECTION -->
-    <section id="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading" style="text-align:center;">Let's Work Together</h2>
-      <div class="contact-links">
-        <a href="https://t.me/Dev_Collins101" target="_blank" class="contact-link">
-          <i class="fab fa-telegram"></i> Telegram
-        </a>
-        <a href="mailto:ifeanyichukwucollins008@gmail.com" class="contact-link">
-          <i class="fas fa-envelope"></i> Email
-        </a>
-        <a href="https://github.com/kariosv4sure" target="_blank" class="contact-link">
-          <i class="fab fa-github"></i> GitHub
+        <a href="https://x.com/kariosv4sure" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-neon/30 text-neon hover:bg-neon hover:text-black transition-all">
+          <i class="fab fa-x-twitter text-xl"></i>
         </a>
       </div>
-      <div style="text-align: center; margin-top: 24px;">
-        <a href="mailto:ifeanyichukwucollins008@gmail.com" class="btn hire" style="display: inline-flex; align-items: center; gap: 8px;">
-          <i class="fas fa-briefcase"></i> HIRE ME
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="min-h-screen flex items-center pt-20 pb-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 w-full">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        
+        <div class="hero-text space-y-5 sm:space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-neon/5 border border-neon/20 rounded-full">
+            <span class="w-2 h-2 bg-neon rounded-full animate-pulse"></span>
+            <p class="text-neon font-mono text-xs sm:text-sm tracking-wider">AVAILABLE FOR WORK</p>
+          </div>
+          
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+            Hello, I'm<br>
+            <span class="inline-block min-w-[280px] sm:min-w-[380px] lg:min-w-[450px]">
+              <span id="typewriter" class="text-neon typewriter-cursor"></span>
+            </span>
+          </h1>
+          
+          <p class="text-gray-400 text-base sm:text-lg max-w-lg leading-relaxed">
+            A passionate full-stack developer crafting robust backend systems, stunning frontends, and intelligent AI-powered solutions that make a real impact.
+          </p>
+          
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="contact.html" class="px-6 py-3 bg-neon/10 border-2 border-neon text-neon rounded-full font-semibold text-sm hover:bg-neon hover:text-black transition-all hover:shadow-[0_0_35px_rgba(55,255,139,0.6)] inline-flex items-center gap-2 group">
+              <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i> 
+              Let's Talk
+            </a>
+            <a href="https://github.com/kariosv4sure" target="_blank" rel="noopener" class="px-6 py-3 border-2 border-white/30 text-white rounded-full font-semibold text-sm hover:bg-white hover:text-black transition-all inline-flex items-center gap-2">
+              <i class="fab fa-github text-lg"></i> 
+              GitHub Profile
+            </a>
+          </div>
+
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-3 py-1.5 bg-neon/10 border border-neon/30 text-neon rounded-full text-xs font-mono font-medium">
+              <i class="fas fa-fire mr-1"></i>Flask
+            </span>
+            <span class="px-3 py-1.5 bg-blue/10 border border-blue/30 text-blue rounded-full text-xs font-mono font-medium">
+              <i class="fas fa-fire mr-1"></i>Django
+            </span>
+            <span class="px-3 py-1.5 bg-neon/10 border border-neon/30 text-neon rounded-full text-xs font-mono font-medium">
+              <i class="fab fa-python mr-1"></i>Python
+            </span>
+            <span class="px-3 py-1.5 bg-blue/10 border border-blue/30 text-blue rounded-full text-xs font-mono font-medium">
+              <i class="fas fa-robot mr-1"></i>AI/ML
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-image flex justify-center md:justify-end">
+          <div class="relative">
+            <div class="w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full border-4 border-neon overflow-hidden glow-avatar">
+              <img src="me.jpg" 
+                   alt="Ifeanyichukwu Collins - Full Stack Developer" 
+                   class="w-full h-full object-cover"
+                   onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%230f1520%22 stroke=%22%2337ff8b%22 stroke-width=%222%22/%3E%3Ccircle cx=%2250%22 cy=%2238%22 r=%2214%22 fill=%22%2337ff8b%22 opacity=%220.7%22/%3E%3Cpath d=%22M28 68 Q50 52 72 68%22 stroke=%22%2337ff8b%22 stroke-width=%223%22 fill=%22none%22/%3E%3Ctext x=%2250%22 y=%2285%22 font-size=%228%22 text-anchor=%22middle%22 fill=%22%2337ff8b%22 font-family=%22monospace%22%3EDeveloper%3C/text%3E%3C/svg%3E'" />
+            </div>
+            <div class="absolute -top-3 -right-3 w-8 h-8 bg-blue rounded-full opacity-40 animate-pulse"></div>
+            <div class="absolute -bottom-3 -left-3 w-6 h-6 bg-neon rounded-full opacity-40 animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-16 animate-bounce">
+        <p class="text-gray-500 text-xs mb-2">Scroll to explore</p>
+        <i class="fas fa-chevron-down text-neon"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT PREVIEW SECTION -->
+  <section id="about-preview" class="py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-neon font-mono text-sm mb-2 tracking-wider">WHO I AM</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue mb-4">
+          <i class="fas fa-user-astronaut mr-2"></i>About Me
+        </h2>
+        <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          I'm Ifeanyichukwu Collins, a full-stack developer with deep expertise in building scalable web applications, RESTful APIs, and AI-integrated solutions. I transform complex problems into elegant, performant code.
+        </p>
+      </div>
+      
+      <div class="grid sm:grid-cols-3 gap-5 sm:gap-6 mb-10">
+        <div class="about-card card-glow-green bg-panel/60 backdrop-blur-sm border border-neon/20 rounded-2xl p-6 sm:p-8 text-center opacity-100" style="opacity: 1; transform: translateY(0);">
+          <div class="w-16 h-16 mx-auto mb-4 bg-neon/10 rounded-full flex items-center justify-center">
+            <i class="fas fa-server text-2xl text-neon"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Backend Development</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Building robust APIs with Flask, Django, and Node.js. Expert in database design, authentication, and cloud deployment.
+          </p>
+          <div class="flex flex-wrap justify-center gap-2 mt-4">
+            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full">Flask</span>
+            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full">Django</span>
+            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full">REST APIs</span>
+          </div>
+        </div>
+        
+        <div class="about-card card-glow-blue bg-panel/60 backdrop-blur-sm border border-blue/20 rounded-2xl p-6 sm:p-8 text-center opacity-100" style="opacity: 1; transform: translateY(0);">
+          <div class="w-16 h-16 mx-auto mb-4 bg-blue/10 rounded-full flex items-center justify-center">
+            <i class="fas fa-laptop-code text-2xl text-blue"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Frontend Engineering</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Creating beautiful, responsive interfaces with React, Vue.js, and modern CSS. Focused on performance and user experience.
+          </p>
+          <div class="flex flex-wrap justify-center gap-2 mt-4">
+            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full">React</span>
+            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full">Tailwind</span>
+            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full">JavaScript</span>
+          </div>
+        </div>
+        
+        <div class="about-card card-glow-green bg-panel/60 backdrop-blur-sm border border-neon/20 rounded-2xl p-6 sm:p-8 text-center opacity-100" style="opacity: 1; transform: translateY(0);">
+          <div class="w-16 h-16 mx-auto mb-4 bg-neon/10 rounded-full flex items-center justify-center">
+            <i class="fas fa-brain text-2xl text-neon"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">AI & Automation</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Integrating LLMs, chatbots, Telegram bots, and intelligent automation. Building AI-powered features that solve real problems.
+          </p>
+          <div class="flex flex-wrap justify-center gap-2 mt-4">
+            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full">LLMs</span>
+            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full">Chatbots</span>
+            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full">Telegram Bots</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="about.html" class="inline-flex items-center gap-2 px-8 py-3 bg-neon/10 border-2 border-neon text-neon rounded-full font-semibold hover:bg-neon hover:text-black transition-all hover:shadow-[0_0_35px_rgba(55,255,139,0.6)]">
+          Read Full About Me <i class="fas fa-arrow-right"></i>
         </a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- PROJECTS PREVIEW SECTION -->
+  <section id="projects-preview" class="py-20 sm:py-28">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-neon font-mono text-sm mb-2 tracking-wider">MY WORK</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue mb-4">
+          <i class="fas fa-code-branch mr-2"></i>Featured Projects
+        </h2>
+        <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          A collection of projects showcasing my expertise in full-stack development, AI integration, and problem-solving.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-10">
+        
+        <div class="project-card card-glow-green bg-panel/60 backdrop-blur-sm border border-neon/20 rounded-2xl p-6 flex flex-col group opacity-100" style="opacity: 1; transform: translateY(0);">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 bg-neon/10 rounded-xl flex items-center justify-center">
+              <i class="fas fa-database text-xl text-neon"></i>
+            </div>
+            <span class="text-xs font-mono text-neon bg-neon/10 px-3 py-1 rounded-full border border-neon/20">Backend API</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 group-hover:text-neon transition-colors">HNG Stage 3 Backend</h3>
+          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
+            Production-ready REST API with user authentication, data validation, and PostgreSQL integration.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">Flask</span>
+            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">Python</span>
+            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">PostgreSQL</span>
+          </div>
+          <div class="flex gap-2 mt-auto">
+            <a href="https://github.com/kariosv4sure/hng-stage3-task4-backend" target="_blank" class="flex-1 text-center px-4 py-2.5 border border-white/20 text-white rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all">
+              <i class="fab fa-github mr-1"></i> GitHub
+            </a>
+            <a href="https://hng-stage3-backend.onrender.com" target="_blank" class="flex-1 text-center px-4 py-2.5 bg-neon/10 border border-neon text-neon rounded-full text-sm font-medium hover:bg-neon hover:text-black transition-all">
+              <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card card-glow-blue bg-panel/60 backdrop-blur-sm border border-blue/20 rounded-2xl p-6 flex flex-col group opacity-100" style="opacity: 1; transform: translateY(0);">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 bg-blue/10 rounded-xl flex items-center justify-center">
+              <i class="fas fa-store text-xl text-blue"></i>
+            </div>
+            <span class="text-xs font-mono text-blue bg-blue/10 px-3 py-1 rounded-full border border-blue/20">E-Commerce</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 group-hover:text-blue transition-colors">Melody Store</h3>
+          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
+            Full-featured e-commerce platform with Paystack payments and instant digital product delivery.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">Flask</span>
+            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">Paystack</span>
+            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">PostgreSQL</span>
+          </div>
+          <div class="flex gap-2 mt-auto">
+            <a href="https://github.com/kariosv4sure/melody-store" target="_blank" class="flex-1 text-center px-4 py-2.5 border border-white/20 text-white rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all">
+              <i class="fab fa-github mr-1"></i> GitHub
+            </a>
+            <a href="https://melody-store.onrender.com" target="_blank" class="flex-1 text-center px-4 py-2.5 bg-blue/10 border border-blue text-blue rounded-full text-sm font-medium hover:bg-blue hover:text-black transition-all">
+              <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card card-glow-green bg-panel/60 backdrop-blur-sm border border-neon/20 rounded-2xl p-6 flex flex-col group opacity-100" style="opacity: 1; transform: translateY(0);">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-12 h-12 bg-neon/10 rounded-xl flex items-center justify-center">
+              <i class="fas fa-robot text-xl text-neon"></i>
+            </div>
+            <span class="text-xs font-mono text-neon bg-neon/10 px-3 py-1 rounded-full border border-neon/20">AI Chatbot</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 group-hover:text-neon transition-colors">Miss Tristin AI</h3>
+          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
+            Personality-rich AI chatbot with witty responses, roasting capabilities, and entertaining conversation.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">Flask</span>
+            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">AI/ML</span>
+            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">Python</span>
+          </div>
+          <div class="flex gap-2 mt-auto">
+            <a href="https://github.com/kariosv4sure/miss-tristin" target="_blank" class="flex-1 text-center px-4 py-2.5 border border-white/20 text-white rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all">
+              <i class="fab fa-github mr-1"></i> GitHub
+            </a>
+            <a href="https://miss-tristin.onrender.com" target="_blank" class="flex-1 text-center px-4 py-2.5 bg-neon/10 border border-neon text-neon rounded-full text-sm font-medium hover:bg-neon hover:text-black transition-all">
+              <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center">
+        <a href="projects.html" class="inline-flex items-center gap-2 px-8 py-3 bg-blue/10 border-2 border-blue text-blue rounded-full font-semibold hover:bg-blue hover:text-black transition-all hover:shadow-[0_0_35px_rgba(76,201,240,0.6)]">
+          View All Projects <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT PREVIEW SECTION -->
+  <section id="contact-preview" class="py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-neon font-mono text-sm mb-2 tracking-wider">LET'S CONNECT</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue mb-4">
+          <i class="fas fa-paper-plane mr-2"></i>Get In Touch
+        </h2>
+        <p class="text-gray-400 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+          Have a project in mind or want to collaborate? I'd love to hear from you. Hit me up on WhatsApp for the fastest response.
+        </p>
+      </div>
+
+      <div class="card-glow-green bg-panel/60 backdrop-blur-sm border border-neon/20 rounded-2xl p-6 sm:p-8 mb-8">
+        <div class="text-center space-y-4">
+          <p class="text-white font-semibold">Ready to build? Choose your channel:</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://wa.me/2348089368681" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white rounded-full font-semibold hover:bg-green-600 transition-all">
+              <i class="fab fa-whatsapp text-xl"></i> WhatsApp
+            </a>
+            <a href="mailto:ifeanyichukwucollins008@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 bg-neon/10 border-2 border-neon text-neon rounded-full font-semibold hover:bg-neon hover:text-black transition-all">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-3 bg-neon/10 border-2 border-neon text-neon rounded-full font-semibold hover:bg-neon hover:text-black transition-all hover:shadow-[0_0_35px_rgba(55,255,139,0.6)]">
+          Go to Full Contact Page <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="flex justify-center gap-5 mt-10">
+        <a href="https://github.com/kariosv4sure" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-neon/30 text-neon hover:bg-neon hover:text-black transition-all hover:shadow-[0_0_30px_rgba(55,255,139,0.5)]">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="https://linkedin.com/in/collins-ifeanyichukwu-b8b399375" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-blue/30 text-blue hover:bg-blue hover:text-black transition-all hover:shadow-[0_0_30px_rgba(76,201,240,0.5)]">
+          <i class="fab fa-linkedin-in text-xl"></i>
+        </a>
+        <a href="https://x.com/kariosv4sure" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-neon/30 text-neon hover:bg-neon hover:text-black transition-all hover:shadow-[0_0_30px_rgba(55,255,139,0.5)]">
+          <i class="fab fa-x-twitter text-xl"></i>
+        </a>
+        <a href="https://t.me/DevCollins101" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-blue/30 text-blue hover:bg-blue hover:text-black transition-all hover:shadow-[0_0_30px_rgba(76,201,240,0.5)]">
+          <i class="fab fa-telegram-plane text-xl"></i>
+        </a>
+        <a href="https://www.instagram.com/devcollins101" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-neon/30 text-neon hover:bg-neon hover:text-black transition-all hover:shadow-[0_0_30px_rgba(55,255,139,0.5)]">
+          <i class="fab fa-instagram text-xl"></i>
+        </a>
+        <a href="https://www.tiktok.com/@dev_collins101" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-blue/30 text-blue hover:bg-blue hover:text-black transition-all hover:shadow-[0_0_30px_rgba(76,201,240,0.5)]">
+          <i class="fab fa-tiktok text-xl"></i>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
-  <footer>© 2026 Built with 💚 by Ifeanyichukwu Collins | Full-Stack Developer | 15+ Live Projects</footer>
+  <footer class="py-10 border-t border-neon/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+      <p class="text-gray-500 text-sm">
+        © 2026 <span class="text-neon font-semibold">Ifeanyichukwu Collins</span> • Crafted with 
+        <i class="fas fa-heart text-red-500 mx-1 animate-pulse"></i> 
+        <i class="fas fa-coffee text-yellow-500 mx-1"></i> 
+        and lots of 
+        <span class="text-blue font-mono">&lt;code/&gt;</span>
+      </p>
+    </div>
+  </footer>
 
-  <!-- TYPEWRITER -->
   <script>
-    const words=["Ifeanyichukwu Collins","A Full-Stack Developer","A Flask & Django Dev","An AI Integration Expert","A Problem Solver"];
-    const el=document.getElementById("type");
-    let i=0,j=0,del=false;
-    function tick(){
-      const w=words[i%words.length];
-      if(!del){j++;}else{j--;}
-      el.textContent=w.slice(0,j);
-      if(!del && j===w.length){del=true;setTimeout(tick,1200);return;}
-      if(del && j===0){del=false;i++;}
-      setTimeout(tick,del?55:75);
-    }
-    tick();
-  </script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // Typewriter Effect
+      const words = ["Ifeanyichukwu Collins", "a Full-Stack Dev", "an AI Engineer", "a Problem Solver"];
+      let wordIdx = 0, charIdx = 0, deleting = false;
+      const el = document.getElementById('typewriter');
+      
+      function type() {
+        if (!el) return;
+        const word = words[wordIdx];
+        if (!deleting) {
+          el.textContent = word.substring(0, ++charIdx);
+          if (charIdx === word.length) { deleting = true; setTimeout(type, 2000); return; }
+        } else {
+          el.textContent = word.substring(0, --charIdx);
+          if (charIdx === 0) { deleting = false; wordIdx = (wordIdx + 1) % words.length; }
+        }
+        setTimeout(type, deleting ? 35 : 75);
+      }
+      type();
 
-  <!-- SCROLL ANIMATION -->
-  <script>
-    const cards=document.querySelectorAll('.card');
-    const observer=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+      // GSAP Animations
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from('.hero-text > *', { 
+        opacity: 0, 
+        y: 30, 
+        stagger: 0.1, 
+        duration: 0.8, 
+        ease: "power3.out" 
       });
-    },{threshold:0.2});
-    cards.forEach(card=>observer.observe(card));
+
+      gsap.from('.hero-image', { 
+        opacity: 0, 
+        scale: 0.8, 
+        duration: 1, 
+        ease: "power3.out",
+        delay: 0.3
+      });
+
+      // Animate cards when they come into view
+      gsap.utils.toArray('.about-card').forEach((card, i) => {
+        gsap.fromTo(card, 
+          { opacity: 0, y: 50 },
+          {
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              toggleActions: 'play none none none'
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            delay: i * 0.15,
+            ease: "back.out(1.5)"
+          }
+        );
+      });
+
+      gsap.utils.toArray('.project-card').forEach((card, i) => {
+        gsap.fromTo(card,
+          { opacity: 0, y: 60 },
+          {
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              toggleActions: 'play none none none'
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            delay: i * 0.1,
+            ease: "power3.out"
+          }
+        );
+      });
+
+      // Contact form animation
+      gsap.from('#contact-preview .card-glow-green', {
+        scrollTrigger: {
+          trigger: '#contact-preview',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        ease: "power2.out"
+      });
+
+      // Mobile Menu
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const line1 = document.getElementById('line1');
+      const line2 = document.getElementById('line2');
+      const line3 = document.getElementById('line3');
+      let menuOpen = false;
+
+      function openMenu() {
+        menuOpen = true;
+        mobileMenu.style.transform = 'translateX(0)';
+        line1.style.transform = 'rotate(45deg) translateY(6.5px)';
+        line2.style.opacity = '0';
+        line3.style.transform = 'rotate(-45deg) translateY(-6.5px)';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        menuOpen = false;
+        mobileMenu.style.transform = 'translateX(100%)';
+        line1.style.transform = 'rotate(0deg) translateY(0)';
+        line2.style.opacity = '1';
+        line3.style.transform = 'rotate(0deg) translateY(0)';
+        document.body.style.overflow = '';
+      }
+
+      menuBtn.addEventListener('click', () => {
+        menuOpen ? closeMenu() : openMenu();
+      });
+      
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          closeMenu();
+        });
+      });
+
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuOpen) {
+          closeMenu();
+        }
+      });
+
+      // Navbar scroll shadow
+      window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 30) {
+          nav.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.6)';
+        } else {
+          nav.style.boxShadow = 'none';
+        }
+      });
+
+      // Smooth scroll for desktop nav links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
-
