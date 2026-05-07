@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   
-  <title>About | Ifeanyichukwu Collins - Full-Stack Developer</title>
-  <meta name="description" content="Full-stack developer from Imo State, Nigeria. Building APIs, AI chatbots, Telegram bots, and full-stack apps with Flask, Python, and modern JavaScript." />
+  <title>About | Ifeanyichukwu Collins - Systems Engineer & Builder</title>
+  <meta name="description" content="Full-stack developer from Imo State, Nigeria. Building systems people actually use. APIs, AI chatbots, Telegram bots, and full-stack apps with Flask, Python, and modern JavaScript." />
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -35,7 +35,12 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Space Grotesk', sans-serif; background: #0b0f14; color: #eaf2ff; overflow-x: hidden; }
+    body { 
+      font-family: 'Space Grotesk', sans-serif; 
+      background: #0b0f14; 
+      color: #eaf2ff; 
+      overflow-x: hidden;
+    }
     
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #0b0f14; }
@@ -45,219 +50,475 @@
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .card-glow-green:hover {
-      box-shadow: 0 0 40px rgba(55, 255, 139, 0.5);
-      border-color: rgba(55, 255, 139, 0.8);
-      transform: translateY(-8px);
+      box-shadow: 0 0 40px rgba(55, 255, 139, 0.4);
+      border-color: rgba(55, 255, 139, 0.7);
+      transform: translateY(-6px);
     }
     
     .card-glow-blue {
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .card-glow-blue:hover {
-      box-shadow: 0 0 40px rgba(76, 201, 240, 0.5);
-      border-color: rgba(76, 201, 240, 0.8);
-      transform: translateY(-8px);
+      box-shadow: 0 0 40px rgba(76, 201, 240, 0.4);
+      border-color: rgba(76, 201, 240, 0.7);
+      transform: translateY(-6px);
     }
 
     .glow-avatar {
       animation: avatarGlow 3s ease-in-out infinite;
     }
     @keyframes avatarGlow {
-      0%, 100% { box-shadow: 0 0 40px rgba(55, 255, 139, 0.4); }
-      50% { box-shadow: 0 0 80px rgba(55, 255, 139, 0.7), 0 0 120px rgba(76, 201, 240, 0.4); }
+      0%, 100% { box-shadow: 0 0 30px rgba(55, 255, 139, 0.3); }
+      50% { box-shadow: 0 0 60px rgba(55, 255, 139, 0.5), 0 0 90px rgba(76, 201, 240, 0.3); }
+    }
+
+    #mobileMenu {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 49;
+      transform: translateX(100%);
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .skill-bar-wrapper {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+      height: 6px;
+    }
+    .skill-bar-fill {
+      width: 0%;
+      height: 100%;
+      border-radius: 999px;
+      transition: width 1.5s cubic-bezier(0.22, 0.97, 0.36, 1);
+    }
+
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      background: #37ff8b;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #37ff8b;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-neon/10">
+  <!-- NAVBAR - MATCHING HOMEPAGE -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-neon/10 transition-shadow">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="text-lg sm:text-xl font-bold bg-gradient-to-r from-neon to-blue bg-clip-text text-transparent">Ifeanyichukwu 🔅</a>
+        <a href="index.html" class="text-lg sm:text-xl font-bold bg-gradient-to-r from-neon to-blue bg-clip-text text-transparent hover:opacity-80 transition-opacity z-50">
+          Ifeanyichukwu 🔅 
+        </a>
+
+        <!-- Desktop Nav -->
         <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-sm text-gray-300 hover:text-neon transition-colors">Home</a>
           <a href="about.html" class="text-sm text-neon font-medium">About</a>
-          <a href="projects.html" class="text-sm text-gray-300 hover:text-neon transition-colors">Projects</a>
-          <a href="contact.html" class="text-sm text-gray-300 hover:text-neon transition-colors">Contact</a>
+          <a href="projects.html" class="text-sm text-gray-300 hover:text-neon transition-colors font-medium">Projects</a>
+          <a href="contact.html" class="text-sm text-gray-300 hover:text-neon transition-colors font-medium">Contact</a>
+          <a href="contact.html" class="px-5 py-2.5 bg-neon/10 border-2 border-neon text-neon rounded-full text-sm font-semibold hover:bg-neon hover:text-black transition-all hover:shadow-[0_0_30px_rgba(55,255,139,0.5)]">
+            <i class="fas fa-handshake mr-2"></i>Hire Me
+          </a>
         </div>
-        <button id="menuBtn" class="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-transparent border-0 cursor-pointer">
-          <span class="block w-6 h-0.5 bg-neon transition-all duration-300" id="line1"></span>
-          <span class="block w-6 h-0.5 bg-neon transition-all duration-300" id="line2"></span>
-          <span class="block w-6 h-0.5 bg-neon transition-all duration-300" id="line3"></span>
+
+        <!-- Hamburger Button -->
+        <button id="menuBtn" class="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none bg-transparent border-0 cursor-pointer">
+          <span class="block w-6 h-0.5 bg-neon transition-all duration-300 origin-center" id="line1"></span>
+          <span class="block w-6 h-0.5 bg-neon transition-all duration-300 origin-center" id="line2"></span>
+          <span class="block w-6 h-0.5 bg-neon transition-all duration-300 origin-center" id="line3"></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <div id="mobileMenu" class="md:hidden bg-dark/98 backdrop-blur-xl fixed top-16 left-0 right-0 bottom-0 z-49" style="transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
-    <div class="flex flex-col items-center justify-center h-full gap-6 px-4">
-      <a href="index.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors py-2">Home</a>
-      <a href="about.html" class="mobile-link text-2xl font-semibold text-neon py-2">About</a>
-      <a href="projects.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors py-2">Projects</a>
-      <a href="contact.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors py-2">Contact</a>
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu" class="md:hidden bg-dark/98 backdrop-blur-xl">
+    <div class="flex flex-col items-center justify-center h-full gap-6 px-4 overflow-y-auto">
+      <p class="text-neon font-mono text-sm mb-4">NAVIGATION</p>
+      <a href="about.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors flex items-center gap-3 py-2">
+        <i class="fas fa-user-astronaut text-neon"></i> About Me
+      </a>
+      <a href="projects.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors flex items-center gap-3 py-2">
+        <i class="fas fa-code-branch text-blue"></i> Projects
+      </a>
+      <a href="contact.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors flex items-center gap-3 py-2">
+        <i class="fas fa-envelope text-neon"></i> Contact
+      </a>
+      <div class="w-32 h-px bg-gradient-to-r from-transparent via-neon/50 to-transparent my-2"></div>
+      <a href="contact.html" class="mobile-link px-8 py-3 bg-neon text-black rounded-full font-semibold text-lg hover:shadow-[0_0_40px_rgba(55,255,139,0.7)] transition-all">
+        <i class="fas fa-rocket mr-2"></i> Hire Me
+      </a>
+      
+      <div class="flex gap-4 mt-8">
+        <a href="https://github.com/kariosv4sure" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-neon/30 text-neon hover:bg-neon hover:text-black transition-all">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="https://linkedin.com/in/collins-ifeanyichukwu-b8b399375" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-blue/30 text-blue hover:bg-blue hover:text-black transition-all">
+          <i class="fab fa-linkedin-in text-xl"></i>
+        </a>
+        <a href="https://x.com/kariosv4sure" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-neon/30 text-neon hover:bg-neon hover:text-black transition-all">
+          <i class="fab fa-x-twitter text-xl"></i>
+        </a>
+      </div>
     </div>
   </div>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <section class="pt-28 pb-12 px-4">
     <div class="max-w-5xl mx-auto">
       <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div>
+        <div class="hero-text">
           <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-neon/5 border border-neon/20 rounded-full mb-4">
             <span class="w-2 h-2 bg-neon rounded-full animate-pulse"></span>
             <p class="text-neon font-mono text-sm">IMO STATE • LAGOS-BASED • BUILDER</p>
           </div>
-          <h1 class="text-4xl sm:text-5xl font-bold mb-4">I'm <span class="text-neon">Collins</span></h1>
-          <p class="text-gray-400 text-lg mb-2">Ifeanyichukwu Collins Chibueze</p>
+          <h1 class="text-4xl sm:text-5xl font-bold mb-3">I'm <span class="text-neon">Collins</span></h1>
+          <p class="text-gray-400 text-base mb-1">Ifeanyichukwu Collins Chibueze</p>
           <p class="text-blue font-mono text-sm mb-4">aka Karios Vantari</p>
-          <p class="text-gray-400 mb-6 leading-relaxed">
-            I'm from Imo State, Nigeria, currently based in Lagos. I build things — APIs, bots, full-stack apps. Not the tutorial-project kind. The actually-deployed, actually-working, someone's-using-it kind.
+          <p class="text-neon text-lg font-semibold mb-3">"I turn ideas into deployed products."</p>
+          <p class="text-gray-400 mb-6 leading-relaxed text-sm">
+            From Imo State, Nigeria — currently based in Lagos. I build systems people actually use. Not tutorial clones. Deployed, working, real-world APIs, bots, and full-stack applications.
           </p>
           <div class="flex flex-wrap gap-3">
-            <a href="projects.html" class="px-6 py-3 bg-neon/10 border-2 border-neon text-neon rounded-full font-semibold hover:bg-neon hover:text-black transition-all">
-              <i class="fas fa-code-branch mr-2"></i>See My Work
-            </a>
-            <a href="contact.html" class="px-6 py-3 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white hover:text-black transition-all">
-              <i class="fas fa-paper-plane mr-2"></i>Contact Me
-            </a>
+            <a href="projects.html" class="px-5 py-2.5 bg-neon/10 border-2 border-neon text-neon rounded-full font-semibold text-sm hover:bg-neon hover:text-black transition-all"><i class="fas fa-code-branch mr-2"></i>See My Work</a>
+            <a href="contact.html" class="px-5 py-2.5 border-2 border-white/30 text-white rounded-full font-semibold text-sm hover:bg-white hover:text-black transition-all"><i class="fas fa-paper-plane mr-2"></i>Contact Me</a>
           </div>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center md:justify-end">
           <div class="relative">
-            <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-full border-4 border-neon overflow-hidden glow-avatar">
+            <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full border-4 border-neon overflow-hidden glow-avatar">
               <img src="me.jpg" alt="Ifeanyichukwu Collins" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%230f1520%22 stroke=%22%2337ff8b%22 stroke-width=%222%22/%3E%3Ccircle cx=%2250%22 cy=%2238%22 r=%2214%22 fill=%22%2337ff8b%22 opacity=%220.7%22/%3E%3Cpath d=%22M28 68 Q50 52 72 68%22 stroke=%22%2337ff8b%22 stroke-width=%223%22 fill=%22none%22/%3E%3Ctext x=%2250%22 y=%2285%22 font-size=%228%22 text-anchor=%22middle%22 fill=%22%2337ff8b%22 font-family=%22monospace%22%3EDeveloper%3C/text%3E%3C/svg%3E'" />
             </div>
-            <div class="absolute -top-3 -right-3 w-8 h-8 bg-blue rounded-full opacity-40 animate-pulse"></div>
-            <div class="absolute -bottom-3 -left-3 w-6 h-6 bg-neon rounded-full opacity-40 animate-pulse"></div>
+            <div class="absolute -top-3 -right-3 w-7 h-7 bg-blue rounded-full opacity-40 animate-pulse"></div>
+            <div class="absolute -bottom-3 -left-3 w-5 h-5 bg-neon rounded-full opacity-40 animate-pulse"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STACK -->
+  <!-- STATS SECTION WITH ANIMATED COUNTERS -->
+  <section class="py-8 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="stat-card card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-5 text-center">
+          <i class="fas fa-code-branch text-2xl text-neon mb-2"></i>
+          <div class="stat-number text-2xl font-bold text-neon"><span class="counter" data-target="14">0</span>+</div>
+          <p class="text-xs text-gray-400 mt-1">Projects Built</p>
+        </div>
+        <div class="stat-card card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-5 text-center">
+          <i class="fas fa-cloud-upload-alt text-2xl text-blue mb-2"></i>
+          <div class="stat-number text-2xl font-bold text-blue"><span class="counter" data-target="8">0</span></div>
+          <p class="text-xs text-gray-400 mt-1">APIs Deployed</p>
+        </div>
+        <div class="stat-card card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-5 text-center">
+          <i class="fas fa-brain text-2xl text-neon mb-2"></i>
+          <div class="stat-number text-2xl font-bold text-neon"><span class="counter" data-target="5">0</span></div>
+          <p class="text-xs text-gray-400 mt-1">AI Systems</p>
+        </div>
+        <div class="stat-card card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-5 text-center">
+          <i class="fas fa-moon text-2xl text-blue mb-2"></i>
+          <div class="stat-number text-2xl font-bold text-blue"><span class="counter" data-target="99">0</span>%</div>
+          <p class="text-xs text-gray-400 mt-1">Late Night Coding</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION WITH ANIMATED BARS -->
   <section class="py-12 px-4">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8">What I <span class="text-neon">Work With</span></h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-6 text-center">
-          <i class="fas fa-code text-3xl text-neon mb-3"></i>
-          <h3 class="font-semibold mb-2">Frontend</h3>
-          <p class="text-gray-400 text-sm">HTML, CSS, JavaScript, Tailwind, GSAP, React</p>
+      <h2 class="text-2xl font-bold text-center mb-8">Tech Stack & <span class="text-neon">Mastery</span></h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <!-- Backend -->
+        <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-5">
+          <h3 class="text-base font-semibold mb-4 flex items-center gap-2"><i class="fas fa-server text-neon"></i> Backend Engineering</h3>
+          <div class="space-y-3">
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>Python</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-neon" data-skill="90"></div></div></div>
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>Flask / Django</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-neon" data-skill="85"></div></div></div>
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>REST APIs & Auth</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-neon" data-skill="88"></div></div></div>
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>PostgreSQL</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-neon" data-skill="80"></div></div></div>
+          </div>
         </div>
-        <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-6 text-center">
-          <i class="fas fa-server text-3xl text-blue mb-3"></i>
-          <h3 class="font-semibold mb-2">Backend</h3>
-          <p class="text-gray-400 text-sm">Python, Flask, Django, REST APIs, JWT Auth</p>
+
+        <!-- Frontend -->
+        <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-5">
+          <h3 class="text-base font-semibold mb-4 flex items-center gap-2"><i class="fas fa-code text-blue"></i> Frontend & Design</h3>
+          <div class="space-y-3">
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>JavaScript</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-blue" data-skill="78"></div></div></div>
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>Tailwind / CSS</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-blue" data-skill="85"></div></div></div>
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>React (Learning)</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-blue" data-skill="65"></div></div></div>
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>GSAP Animation</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-blue" data-skill="75"></div></div></div>
+          </div>
         </div>
-        <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-6 text-center">
-          <i class="fas fa-robot text-3xl text-neon mb-3"></i>
-          <h3 class="font-semibold mb-2">AI & Bots</h3>
-          <p class="text-gray-400 text-sm">LLMs, Chatbots, Telegram Bots, NLP, Automation</p>
+
+        <!-- AI -->
+        <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-5">
+          <h3 class="text-base font-semibold mb-4 flex items-center gap-2"><i class="fas fa-robot text-neon"></i> AI & Automation</h3>
+          <div class="space-y-3">
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>LLM Integration</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-neon" data-skill="75"></div></div></div>
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>Telegram Bots</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-neon" data-skill="85"></div></div></div>
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>Chatbot Systems</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-neon" data-skill="80"></div></div></div>
+          </div>
         </div>
-        <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-6 text-center">
-          <i class="fas fa-database text-3xl text-blue mb-3"></i>
-          <h3 class="font-semibold mb-2">Data & Deploy</h3>
-          <p class="text-gray-400 text-sm">PostgreSQL, JSON, Render, Git, API Integration</p>
+
+        <!-- DevOps -->
+        <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-5">
+          <h3 class="text-base font-semibold mb-4 flex items-center gap-2"><i class="fas fa-cloud text-blue"></i> DevOps & Workflow</h3>
+          <div class="space-y-3">
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>Git & GitHub</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-blue" data-skill="85"></div></div></div>
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>Linux / Termux</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-blue" data-skill="82"></div></div></div>
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>Deployment</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-blue" data-skill="78"></div></div></div>
+            <div class="skill-item"><div class="flex justify-between text-sm mb-1"><span>Project Planning</span><span class="skill-percent">0%</span></div><div class="skill-bar-wrapper"><div class="skill-bar-fill bg-blue" data-skill="80"></div></div></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MINDSET -->
+  <!-- TIMELINE SECTION -->
   <section class="py-12 px-4">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8">How I <span class="text-neon">Operate</span></h2>
-      <div class="space-y-4">
-        <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-6 flex gap-4">
-          <span class="text-3xl flex-shrink-0">🎯</span>
-          <div>
-            <h3 class="font-semibold mb-1">Direct, no sugarcoating</h3>
-            <p class="text-gray-400 text-sm">I prefer honest feedback and straight communication. Tell me what works and what doesn't — I'll fix it or tell you why it can't be done.</p>
+      <h2 class="text-2xl font-bold text-center mb-8">My <span class="text-neon">Journey</span></h2>
+      <div class="relative pl-6 border-l-2 border-neon/30">
+        <div class="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-neon to-blue origin-top scale-y-0" id="timelineFill"></div>
+        
+        <div class="mb-6 relative">
+          <div class="timeline-dot absolute -left-[25px] top-1"></div>
+          <div class="bg-panel/60 p-4 rounded-xl border border-neon/20">
+            <h3 class="text-lg font-bold text-neon">2023</h3>
+            <p class="text-gray-300 text-sm">Started frontend and design — HTML, CSS, JS. Built first real portfolio.</p>
           </div>
         </div>
-        <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-6 flex gap-4">
-          <span class="text-3xl flex-shrink-0">🧩</span>
-          <div>
-            <h3 class="font-semibold mb-1">Systems thinking</h3>
-            <p class="text-gray-400 text-sm">I don't just write code. I think about how everything connects — database structure, API design, user experience, deployment pipeline.</p>
+        
+        <div class="mb-6 relative">
+          <div class="timeline-dot absolute -left-[25px] top-1"></div>
+          <div class="bg-panel/60 p-4 rounded-xl border border-blue/20">
+            <h3 class="text-lg font-bold text-blue">2024</h3>
+            <p class="text-gray-300 text-sm">Mastered backend: Python, Flask, APIs. Deployed first production bot.</p>
           </div>
         </div>
-        <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-6 flex gap-4">
-          <span class="text-3xl flex-shrink-0">🚀</span>
-          <div>
-            <h3 class="font-semibold mb-1">Build fast, iterate faster</h3>
-            <p class="text-gray-400 text-sm">I push ideas to production quickly. If something breaks, I fix it. I learn by building real things that real people use, not by watching endless tutorials.</p>
+        
+        <div class="mb-6 relative">
+          <div class="timeline-dot absolute -left-[25px] top-1"></div>
+          <div class="bg-panel/60 p-4 rounded-xl border border-neon/20">
+            <h3 class="text-lg font-bold text-neon">2025</h3>
+            <p class="text-gray-300 text-sm">AI systems integration, Telegram bots, LLM automation. Full-stack complex apps.</p>
           </div>
         </div>
-        <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-6 flex gap-4">
-          <span class="text-3xl flex-shrink-0">📈</span>
-          <div>
-            <h3 class="font-semibold mb-1">Always leveling up</h3>
-            <p class="text-gray-400 text-sm">Currently stepping into React Native. I move to the next tech when I'm ready to build with it, not because it's trending. Practical over hype, always.</p>
+        
+        <div class="relative">
+          <div class="timeline-dot absolute -left-[25px] top-1"></div>
+          <div class="bg-panel/60 p-4 rounded-xl border border-blue/20">
+            <h3 class="text-lg font-bold text-blue">2026</h3>
+            <p class="text-gray-300 text-sm">React Native + scalable systems — building cross-platform solutions.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FUN FACTS -->
+  <!-- FOCUS & PHILOSOPHY -->
   <section class="py-12 px-4">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8">Random <span class="text-neon">Facts</span></h2>
-      <div class="grid sm:grid-cols-2 gap-4">
-        <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-5 text-center">
-          <i class="fas fa-moon text-2xl text-neon mb-2"></i>
-          <p class="text-gray-300 text-sm">Best code happens between 12AM and 4AM. Night owl by design, not by accident.</p>
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-8">Current <span class="text-neon">Focus & Philosophy</span></h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div class="card-glow-green bg-panel/60 rounded-2xl p-5 border border-neon/20">
+          <i class="fas fa-fire text-xl text-neon mb-2"></i>
+          <h3 class="text-base font-semibold mb-1">What I'm Building Now</h3>
+          <p class="text-gray-400 text-xs leading-relaxed">React Native apps + backend orchestration. Moving from web-only to mobile-ready systems.</p>
         </div>
-        <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-5 text-center">
-          <i class="fas fa-music text-2xl text-blue mb-2"></i>
-          <p class="text-gray-300 text-sm">Lo-fi or complete silence. No in-between. Music sets the build tempo.</p>
+        <div class="card-glow-blue bg-panel/60 rounded-2xl p-5 border border-blue/20">
+          <i class="fas fa-gem text-xl text-blue mb-2"></i>
+          <h3 class="text-base font-semibold mb-1">Philosophy</h3>
+          <p class="text-gray-400 text-xs leading-relaxed">Build fast, deploy faster. Code is meant to run, not just look pretty.</p>
         </div>
-        <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-5 text-center">
-          <i class="fas fa-mug-hot text-2xl text-blue mb-2"></i>
-          <p class="text-gray-300 text-sm">Coffee is a dependency. Not a joke — actual fuel for deployment nights.</p>
+        <div class="card-glow-blue bg-panel/60 rounded-2xl p-5 border border-blue/20">
+          <i class="fas fa-chalkboard-user text-xl text-blue mb-2"></i>
+          <h3 class="text-base font-semibold mb-1">Favorite Workflow</h3>
+          <p class="text-gray-400 text-xs leading-relaxed">Local dev on Termux + VPS deployment. Automation scripts for fast iteration.</p>
         </div>
-        <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-5 text-center">
-          <i class="fas fa-bug text-2xl text-neon mb-2"></i>
-          <p class="text-gray-300 text-sm">I debug faster than I write. Breaking things taught me more than tutorials ever did.</p>
+        <div class="card-glow-green bg-panel/60 rounded-2xl p-5 border border-neon/20">
+          <i class="fas fa-bolt text-xl text-neon mb-2"></i>
+          <h3 class="text-base font-semibold mb-1">Currently Learning</h3>
+          <p class="text-gray-400 text-xs leading-relaxed">React Native (deeper), system design patterns, advanced DevOps.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="py-10 border-t border-neon/10">
+  <!-- FOOTER -->
+  <footer class="py-8 border-t border-neon/10">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <p class="text-gray-500 text-sm">© 2026 <span class="text-neon font-semibold">Ifeanyichukwu Collins</span></p>
+      <p class="text-gray-500 text-xs">
+        © 2026 <span class="text-neon font-semibold">Ifeanyichukwu Collins</span> • Crafted with 
+        <i class="fas fa-heart text-red-500 mx-1 animate-pulse"></i> 
+        <i class="fas fa-coffee text-yellow-500 mx-1"></i> 
+        and lots of 
+        <span class="text-blue font-mono">&lt;code/&gt;</span>
+      </p>
     </div>
   </footer>
 
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const line1 = document.getElementById('line1');
-    const line2 = document.getElementById('line2');
-    const line3 = document.getElementById('line3');
-    let menuOpen = false;
-    function openMenu() {
-      menuOpen = true;
-      mobileMenu.style.transform = 'translateX(0)';
-      line1.style.transform = 'rotate(45deg) translateY(6.5px)';
-      line2.style.opacity = '0';
-      line3.style.transform = 'rotate(-45deg) translateY(-6.5px)';
-      document.body.style.overflow = 'hidden';
-    }
-    function closeMenu() {
-      menuOpen = false;
-      mobileMenu.style.transform = 'translateX(100%)';
-      line1.style.transform = 'rotate(0deg) translateY(0)';
-      line2.style.opacity = '1';
-      line3.style.transform = 'rotate(0deg) translateY(0)';
-      document.body.style.overflow = '';
-    }
-    menuBtn.addEventListener('click', () => menuOpen ? closeMenu() : openMenu());
-    document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero animation
+      gsap.from('.hero-text > *', { 
+        opacity: 0, 
+        y: 25, 
+        stagger: 0.1, 
+        duration: 0.7, 
+        ease: "power3.out" 
+      });
+      gsap.from('.glow-avatar', { scale: 0.8, opacity: 0, duration: 0.8, delay: 0.3 });
+
+      // ========== ANIMATED COUNTERS (Slower) ==========
+      const counters = document.querySelectorAll('.counter');
+      
+      function animateCounter(counter) {
+        const target = parseInt(counter.getAttribute('data-target'));
+        let current = 0;
+        const increment = target / 80; // Slower: 80 steps
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.innerText = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCounter();
+      }
+
+      // Intersection Observer for counters
+      const observerOptions = { threshold: 0.5, rootMargin: "0px" };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            if (counter.innerText === '0') {
+              animateCounter(counter);
+            }
+            observer.unobserve(counter);
+          }
+        });
+      }, observerOptions);
+
+      counters.forEach(counter => observer.observe(counter));
+
+      // ========== SKILL BARS ANIMATION ==========
+      const skillBars = document.querySelectorAll('.skill-bar-fill');
+      const percentSpans = document.querySelectorAll('.skill-percent');
+
+      const animateSkills = () => {
+        skillBars.forEach(bar => {
+          const skillValue = bar.getAttribute('data-skill');
+          bar.style.width = skillValue + '%';
+        });
+        
+        percentSpans.forEach((span, idx) => {
+          const parentBar = span.closest('.skill-item')?.querySelector('.skill-bar-fill');
+          const targetVal = parentBar ? parseInt(parentBar.getAttribute('data-skill')) : 0;
+          let currentVal = 0;
+          const step = targetVal / 60;
+          const interval = setInterval(() => {
+            currentVal += step;
+            if (currentVal >= targetVal) {
+              span.innerText = targetVal + '%';
+              clearInterval(interval);
+            } else {
+              span.innerText = Math.floor(currentVal) + '%';
+            }
+          }, 20);
+        });
+      };
+
+      ScrollTrigger.create({ 
+        trigger: ".skill-bar-wrapper", 
+        start: "top 80%", 
+        once: true, 
+        onEnter: () => animateSkills() 
+      });
+
+      // ========== TIMELINE ANIMATION ==========
+      ScrollTrigger.create({ 
+        trigger: ".timeline-line", 
+        start: "top 80%", 
+        once: true, 
+        onEnter: () => gsap.to("#timelineFill", { scaleY: 1, duration: 1.2, ease: "power2.out" }) 
+      });
+
+      // ========== CARD STAGGER ANIMATIONS ==========
+      gsap.utils.toArray('.card-glow-green, .card-glow-blue, .stat-card').forEach((card, i) => {
+        gsap.fromTo(card, 
+          { opacity: 0, y: 25 },
+          {
+            scrollTrigger: { trigger: card, start: 'top 88%', toggleActions: 'play none none none' },
+            opacity: 1, y: 0, duration: 0.5, delay: i * 0.05, ease: "power2.out"
+          }
+        );
+      });
+
+      // ========== MOBILE MENU ==========
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const line1 = document.getElementById('line1');
+      const line2 = document.getElementById('line2');
+      const line3 = document.getElementById('line3');
+      let menuOpen = false;
+
+      function openMenu() {
+        menuOpen = true;
+        mobileMenu.style.transform = 'translateX(0)';
+        line1.style.transform = 'rotate(45deg) translateY(6.5px)';
+        line2.style.opacity = '0';
+        line3.style.transform = 'rotate(-45deg) translateY(-6.5px)';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        menuOpen = false;
+        mobileMenu.style.transform = 'translateX(100%)';
+        line1.style.transform = 'rotate(0deg) translateY(0)';
+        line2.style.opacity = '1';
+        line3.style.transform = 'rotate(0deg) translateY(0)';
+        document.body.style.overflow = '';
+      }
+
+      if (menuBtn) {
+        menuBtn.addEventListener('click', () => menuOpen ? closeMenu() : openMenu());
+      }
+      
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuOpen) closeMenu();
+      });
+
+      // Navbar scroll shadow
+      window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        nav.style.boxShadow = window.scrollY > 30 ? '0 10px 40px rgba(0, 0, 0, 0.6)' : 'none';
+      });
+    });
   </script>
 </body>
 </html>

@@ -4,13 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   
-  <title>Contact | Ifeanyichukwu Collins - Let's Build Something</title>
-  <meta name="description" content="Contact Ifeanyichukwu Collins for full-stack development, AI integration, Telegram bots, or backend systems. WhatsApp for fast response." />
+  <title>Contact | Ifeanyichukwu Collins - Let's Build Something That Works</title>
+  <meta name="description" content="Contact Ifeanyichukwu Collins for full-stack development, AI integration, Telegram bots, or backend systems. Fast response, real deployment." />
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -33,7 +35,12 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Space Grotesk', sans-serif; background: #0b0f14; color: #eaf2ff; overflow-x: hidden; }
+    body { 
+      font-family: 'Space Grotesk', sans-serif; 
+      background: #0b0f14; 
+      color: #eaf2ff; 
+      overflow-x: hidden;
+    }
     
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #0b0f14; }
@@ -43,99 +50,164 @@
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .card-glow-green:hover {
-      box-shadow: 0 0 40px rgba(55, 255, 139, 0.5), 0 0 80px rgba(55, 255, 139, 0.3);
-      border-color: rgba(55, 255, 139, 0.8);
-      transform: translateY(-8px);
+      box-shadow: 0 0 40px rgba(55, 255, 139, 0.4);
+      border-color: rgba(55, 255, 139, 0.7);
+      transform: translateY(-6px);
     }
     
     .card-glow-blue {
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .card-glow-blue:hover {
-      box-shadow: 0 0 40px rgba(76, 201, 240, 0.5), 0 0 80px rgba(76, 201, 240, 0.3);
-      border-color: rgba(76, 201, 240, 0.8);
-      transform: translateY(-8px);
+      box-shadow: 0 0 40px rgba(76, 201, 240, 0.4);
+      border-color: rgba(76, 201, 240, 0.7);
+      transform: translateY(-6px);
+    }
+
+    #mobileMenu {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 49;
+      transform: translateX(100%);
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-neon/10">
+  <!-- NAVBAR - MATCHING HOMEPAGE -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-neon/10 transition-shadow">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="text-lg sm:text-xl font-bold bg-gradient-to-r from-neon to-blue bg-clip-text text-transparent">Ifeanyichukwu 🔅</a>
+        <a href="index.html" class="text-lg sm:text-xl font-bold bg-gradient-to-r from-neon to-blue bg-clip-text text-transparent hover:opacity-80 transition-opacity z-50">
+          Ifeanyichukwu 🔅 
+        </a>
+
+        <!-- Desktop Nav -->
         <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-sm text-gray-300 hover:text-neon transition-colors">Home</a>
-          <a href="about.html" class="text-sm text-gray-300 hover:text-neon transition-colors">About</a>
-          <a href="projects.html" class="text-sm text-gray-300 hover:text-neon transition-colors">Projects</a>
+          <a href="about.html" class="text-sm text-gray-300 hover:text-neon transition-colors font-medium">About</a>
+          <a href="projects.html" class="text-sm text-gray-300 hover:text-neon transition-colors font-medium">Projects</a>
           <a href="contact.html" class="text-sm text-neon font-medium">Contact</a>
+          <a href="contact.html" class="px-5 py-2.5 bg-neon/10 border-2 border-neon text-neon rounded-full text-sm font-semibold hover:bg-neon hover:text-black transition-all hover:shadow-[0_0_30px_rgba(55,255,139,0.5)]">
+            <i class="fas fa-handshake mr-2"></i>Hire Me
+          </a>
         </div>
-        <button id="menuBtn" class="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-transparent border-0 cursor-pointer">
-          <span class="block w-6 h-0.5 bg-neon transition-all duration-300" id="line1"></span>
-          <span class="block w-6 h-0.5 bg-neon transition-all duration-300" id="line2"></span>
-          <span class="block w-6 h-0.5 bg-neon transition-all duration-300" id="line3"></span>
+
+        <!-- Hamburger Button -->
+        <button id="menuBtn" class="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none bg-transparent border-0 cursor-pointer">
+          <span class="block w-6 h-0.5 bg-neon transition-all duration-300 origin-center" id="line1"></span>
+          <span class="block w-6 h-0.5 bg-neon transition-all duration-300 origin-center" id="line2"></span>
+          <span class="block w-6 h-0.5 bg-neon transition-all duration-300 origin-center" id="line3"></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <div id="mobileMenu" class="md:hidden bg-dark/98 backdrop-blur-xl fixed top-16 left-0 right-0 bottom-0 z-49" style="transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
-    <div class="flex flex-col items-center justify-center h-full gap-6 px-4">
-      <a href="index.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors py-2">Home</a>
-      <a href="about.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors py-2">About</a>
-      <a href="projects.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors py-2">Projects</a>
-      <a href="contact.html" class="mobile-link text-2xl font-semibold text-neon py-2">Contact</a>
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu" class="md:hidden bg-dark/98 backdrop-blur-xl">
+    <div class="flex flex-col items-center justify-center h-full gap-6 px-4 overflow-y-auto">
+      <p class="text-neon font-mono text-sm mb-4">NAVIGATION</p>
+      <a href="about.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors flex items-center gap-3 py-2">
+        <i class="fas fa-user-astronaut text-neon"></i> About Me
+      </a>
+      <a href="projects.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors flex items-center gap-3 py-2">
+        <i class="fas fa-code-branch text-blue"></i> Projects
+      </a>
+      <a href="contact.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors flex items-center gap-3 py-2">
+        <i class="fas fa-envelope text-neon"></i> Contact
+      </a>
+      <div class="w-32 h-px bg-gradient-to-r from-transparent via-neon/50 to-transparent my-2"></div>
+      <a href="contact.html" class="mobile-link px-8 py-3 bg-neon text-black rounded-full font-semibold text-lg hover:shadow-[0_0_40px_rgba(55,255,139,0.7)] transition-all">
+        <i class="fas fa-rocket mr-2"></i> Hire Me
+      </a>
+      
+      <div class="flex gap-4 mt-8">
+        <a href="https://github.com/kariosv4sure" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-neon/30 text-neon hover:bg-neon hover:text-black transition-all">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <a href="https://linkedin.com/in/collins-ifeanyichukwu-b8b399375" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-blue/30 text-blue hover:bg-blue hover:text-black transition-all">
+          <i class="fab fa-linkedin-in text-xl"></i>
+        </a>
+        <a href="https://x.com/kariosv4sure" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-neon/30 text-neon hover:bg-neon hover:text-black transition-all">
+          <i class="fab fa-x-twitter text-xl"></i>
+        </a>
+      </div>
     </div>
   </div>
 
-  <!-- HERO -->
-  <section class="pt-28 pb-8 px-4">
+  <!-- HERO SECTION -->
+  <section class="pt-28 pb-12 px-4">
     <div class="max-w-3xl mx-auto text-center">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-neon/5 border border-neon/20 rounded-full mb-6">
         <span class="w-2 h-2 bg-neon rounded-full animate-pulse"></span>
-        <p class="text-neon font-mono text-sm tracking-wider">OPEN TO WORK</p>
+        <p class="text-neon font-mono text-sm tracking-wider">OPEN FOR FREELANCE</p>
       </div>
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Let's <span class="text-neon">Build</span></h1>
-      <p class="text-gray-400 text-lg">Direct communication. No forms that vanish into the void.</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Let's <span class="text-neon">Build</span> Something Great</h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">Direct communication. Real deployment. No forms that vanish into the void.</p>
     </div>
   </section>
 
-  <!-- WHO SHOULD CONTACT + WHY -->
+  <!-- QUICK STATS WITH ANIMATED COUNTERS -->
   <section class="py-8 px-4">
     <div class="max-w-4xl mx-auto">
-      <div class="grid sm:grid-cols-2 gap-6 mb-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="stat-card card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-5 text-center">
+          <i class="fas fa-rocket text-2xl text-neon mb-2"></i>
+          <div class="stat-number text-2xl font-bold text-neon"><span class="counter" data-target="14">0</span>+</div>
+          <p class="text-xs text-gray-400 mt-1">Projects Shipped</p>
+        </div>
+        <div class="stat-card card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-5 text-center">
+          <i class="fas fa-clock text-2xl text-blue mb-2"></i>
+          <div class="stat-number text-2xl font-bold text-blue">&lt;<span class="counter" data-target="3">0</span>hrs</div>
+          <p class="text-xs text-gray-400 mt-1">Avg Response</p>
+        </div>
+        <div class="stat-card card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-5 text-center">
+          <i class="fas fa-check-circle text-2xl text-neon mb-2"></i>
+          <div class="stat-number text-2xl font-bold text-neon"><span class="counter" data-target="100">0</span>%</div>
+          <p class="text-xs text-gray-400 mt-1">Deployment Rate</p>
+        </div>
+        <div class="stat-card card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-5 text-center">
+          <i class="fas fa-globe text-2xl text-blue mb-2"></i>
+          <div class="stat-number text-2xl font-bold text-blue">🇳🇬</div>
+          <p class="text-xs text-gray-400 mt-1">Based in Lagos</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO + WHY (Side by Side) -->
+  <section class="py-12 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-6">
         
-        <!-- Who -->
-        <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-6 sm:p-8">
+        <!-- Who Should Contact -->
+        <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-6">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-neon/10 rounded-xl flex items-center justify-center">
               <i class="fas fa-users text-xl text-neon"></i>
             </div>
-            <h2 class="text-xl font-bold">Who <span class="text-neon">Should</span> Contact Me</h2>
+            <h2 class="text-xl font-bold">Who <span class="text-neon">Should</span> Reach Out</h2>
           </div>
           <ul class="space-y-3 text-gray-300 text-sm">
-            <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-neon mt-1 flex-shrink-0"></i>
-              <span><strong class="text-white">Startups & founders</strong> who need an MVP built fast — not in months, in days.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-neon mt-1 flex-shrink-0"></i>
-              <span><strong class="text-white">Businesses</strong> wanting custom bots (Telegram, AI chatbots) or automation systems.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-neon mt-1 flex-shrink-0"></i>
-              <span><strong class="text-white">Developers/teams</strong> who need a backend engineer for their Flask/Django projects.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="fas fa-check-circle text-neon mt-1 flex-shrink-0"></i>
-              <span><strong class="text-white">Anyone</strong> with a real project, not just an "idea" — I build, not brainstorm.</span>
-            </li>
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-neon mt-1 flex-shrink-0 text-xs"></i><span><strong class="text-white">Startups & founders</strong> needing an MVP built in days, not months.</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-neon mt-1 flex-shrink-0 text-xs"></i><span><strong class="text-white">Businesses</strong> wanting custom bots or automation systems.</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-neon mt-1 flex-shrink-0 text-xs"></i><span><strong class="text-white">Dev teams</strong> needing a backend engineer for Flask/Django.</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-neon mt-1 flex-shrink-0 text-xs"></i><span><strong class="text-white">Anyone</strong> with a real project ready for execution.</span></li>
           </ul>
         </div>
 
-        <!-- Why -->
-        <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-6 sm:p-8">
+        <!-- Why Work With Me -->
+        <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-6">
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 bg-blue/10 rounded-xl flex items-center justify-center">
               <i class="fas fa-star text-xl text-blue"></i>
@@ -143,176 +215,325 @@
             <h2 class="text-xl font-bold">Why <span class="text-blue">Work</span> With Me</h2>
           </div>
           <ul class="space-y-3 text-gray-300 text-sm">
-            <li class="flex items-start gap-2">
-              <i class="fas fa-bolt text-blue mt-1 flex-shrink-0"></i>
-              <span><strong class="text-white">Speed:</strong> I ship fast. First version often within 48-72 hours depending on scope.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="fas fa-cogs text-blue mt-1 flex-shrink-0"></i>
-              <span><strong class="text-white">Systems approach:</strong> I don't just code features. I think database, API, UI — the whole chain.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="fas fa-comments text-blue mt-1 flex-shrink-0"></i>
-              <span><strong class="text-white">No BS communication:</strong> I'll tell you what's possible, what's not, and what's a bad idea. Directly.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <i class="fas fa-fire text-blue mt-1 flex-shrink-0"></i>
-              <span><strong class="text-white">Actually deployed:</strong> My stuff runs on real servers, not just localhost. I deploy, you see results.</span>
-            </li>
+            <li class="flex items-start gap-2"><i class="fas fa-bolt text-blue mt-1 flex-shrink-0 text-xs"></i><span><strong class="text-white">Speed:</strong> First working version in 48-72 hours depending on scope.</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-cogs text-blue mt-1 flex-shrink-0 text-xs"></i><span><strong class="text-white">Systems approach:</strong> Database → API → UI, the whole chain.</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-comments text-blue mt-1 flex-shrink-0 text-xs"></i><span><strong class="text-white">Direct communication:</strong> No BS. I tell you what's possible and what's not.</span></li>
+            <li class="flex items-start gap-2"><i class="fas fa-fire text-blue mt-1 flex-shrink-0 text-xs"></i><span><strong class="text-white">Actually deployed:</strong> Real servers, real results. Not localhost demos.</span></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT METHODS -->
+  <!-- PROCESS (4 Steps) -->
   <section class="py-8 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-8">How We <span class="text-neon">Work</span></h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div class="process-step bg-panel/40 p-4 rounded-xl border border-neon/10 hover:border-neon/30 transition-all duration-300 hover:-translate-y-1">
+          <div class="text-3xl mb-2">💬</div>
+          <h3 class="font-bold text-neon text-sm">1. Discuss</h3>
+          <p class="text-xs text-gray-400">Scope & goals</p>
+        </div>
+        <div class="process-step bg-panel/40 p-4 rounded-xl border border-blue/10 hover:border-blue/30 transition-all duration-300 hover:-translate-y-1">
+          <div class="text-3xl mb-2">📐</div>
+          <h3 class="font-bold text-blue text-sm">2. Plan</h3>
+          <p class="text-xs text-gray-400">Architecture & timeline</p>
+        </div>
+        <div class="process-step bg-panel/40 p-4 rounded-xl border border-neon/10 hover:border-neon/30 transition-all duration-300 hover:-translate-y-1">
+          <div class="text-3xl mb-2">⚙️</div>
+          <h3 class="font-bold text-neon text-sm">3. Build</h3>
+          <p class="text-xs text-gray-400">Iterative development</p>
+        </div>
+        <div class="process-step bg-panel/40 p-4 rounded-xl border border-blue/10 hover:border-blue/30 transition-all duration-300 hover:-translate-y-1">
+          <div class="text-3xl mb-2">🚀</div>
+          <h3 class="font-bold text-blue text-sm">4. Deploy</h3>
+          <p class="text-xs text-gray-400">Live & ongoing support</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST SIGNALS -->
+  <section class="py-6 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-400 border-y border-neon/10 py-5">
+        <span><i class="fas fa-check-circle text-neon mr-1"></i> Responsive comms</span>
+        <span><i class="fas fa-mobile-alt text-blue mr-1"></i> Mobile-friendly</span>
+        <span><i class="fas fa-cloud-upload-alt text-neon mr-1"></i> Deployment included</span>
+        <span><i class="fas fa-headset text-blue mr-1"></i> Ongoing support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT METHODS -->
+  <section class="py-12 px-4">
     <div class="max-w-2xl mx-auto">
-      <h2 class="text-2xl font-bold text-center mb-8">How to <span class="text-neon">Reach Me</span></h2>
+      <h2 class="text-2xl font-bold text-center mb-8">Reach <span class="text-neon">Directly</span></h2>
       
-      <!-- WhatsApp - Primary -->
-      <div class="card-glow-green bg-panel/60 border-2 border-neon/30 rounded-2xl p-6 sm:p-8 mb-6 relative overflow-hidden">
-        <div class="absolute top-0 right-0 bg-neon text-black px-4 py-1 text-xs font-bold rounded-bl-xl">FASTEST</div>
+      <!-- WhatsApp -->
+      <div class="card-glow-green bg-panel/60 border-2 border-neon/30 rounded-2xl p-6 mb-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-neon text-black px-3 py-1 text-xs font-bold rounded-bl-xl">FASTEST</div>
         <div class="flex items-center gap-4 mb-4">
-          <div class="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-            <i class="fab fa-whatsapp text-2xl text-green-400"></i>
+          <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
+            <i class="fab fa-whatsapp text-xl text-green-400"></i>
           </div>
           <div>
-            <h3 class="text-lg font-semibold">WhatsApp</h3>
-            <p class="text-gray-400 text-sm">Direct line to me. Best for project inquiries and quick back-and-forth. Response within hours, not days.</p>
+            <h3 class="text-base font-semibold">WhatsApp</h3>
+            <p class="text-gray-400 text-xs">Direct line. Response within hours.</p>
           </div>
         </div>
-        <a href="https://wa.me/2348089368681?text=Hey%20Collins,%20I%20have%20a%20project%20I'd%20like%20to%20discuss." target="_blank" class="block w-full text-center py-4 bg-green-500 text-white rounded-xl font-semibold hover:bg-green-600 hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-all">
+        <a href="https://wa.me/2348089368681?text=Hey%20Collins,%20I%20have%20a%20project%20to%20discuss." target="_blank" class="block w-full text-center py-3 bg-green-500 text-white rounded-xl font-semibold text-sm hover:bg-green-600 transition-all">
           <i class="fab fa-whatsapp mr-2"></i> Message on WhatsApp
         </a>
       </div>
 
       <!-- Telegram -->
-      <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-6 sm:p-8 mb-6">
+      <div class="card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-6 mb-6">
         <div class="flex items-center gap-4 mb-4">
-          <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-            <i class="fab fa-telegram-plane text-2xl text-blue-400"></i>
+          <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+            <i class="fab fa-telegram-plane text-xl text-blue-400"></i>
           </div>
           <div>
-            <h3 class="text-lg font-semibold">Telegram</h3>
-            <p class="text-gray-400 text-sm">Also fast. Good for tech talk, bot discussions, or if you just prefer Telegram.</p>
+            <h3 class="text-base font-semibold">Telegram</h3>
+            <p class="text-gray-400 text-xs">Great for tech-heavy discussions.</p>
           </div>
         </div>
-        <a href="https://t.me/DevCollins101" target="_blank" class="block w-full text-center py-4 bg-blue-500/10 border-2 border-blue-400 text-blue-400 rounded-xl font-semibold hover:bg-blue-500 hover:text-white transition-all">
+        <a href="https://t.me/DevCollins101" target="_blank" class="block w-full text-center py-3 bg-blue-500/10 border-2 border-blue-400 text-blue-400 rounded-xl font-semibold text-sm hover:bg-blue-500 hover:text-white transition-all">
           <i class="fab fa-telegram-plane mr-2"></i> Message on Telegram
         </a>
       </div>
 
-      <!-- Quick Form -->
-      <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-6 sm:p-8">
-        <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
-          <i class="fas fa-envelope text-neon"></i> Drop a Message
+      <!-- Email Form -->
+      <div class="card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-6">
+        <h3 class="text-base font-semibold mb-4 flex items-center gap-2">
+          <i class="fas fa-envelope text-neon"></i> Send a Detailed Inquiry
         </h3>
-        <p class="text-gray-400 text-sm mb-6">Prefer a slower, more detailed intro? Fill this out and I'll get back to you.</p>
+        <p class="text-gray-400 text-xs mb-5">Prefer email? Fill this out — I reply within 24hrs.</p>
         <form action="https://formsubmit.co/ifeanyichukwucollins008@gmail.com" method="POST" class="space-y-4">
           <input type="text" name="_honey" style="display:none">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value="https://karios-portfolio.onrender.com/thanks.html">
           
-          <div class="grid sm:grid-cols-2 gap-4">
+          <div class="grid sm:grid-cols-2 gap-3">
             <div>
-              <label class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
-              <input type="text" name="name" required placeholder="What should I call you?" class="w-full px-4 py-3 bg-dark border border-neon/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon/50 transition-all text-sm" />
+              <label class="block text-xs font-medium text-gray-400 mb-1">Your Name</label>
+              <input type="text" name="name" required placeholder="What should I call you?" class="w-full px-3 py-2.5 bg-dark border border-neon/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-neon text-sm" />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-300 mb-2">Budget Range</label>
-              <select name="budget" class="w-full px-4 py-3 bg-dark border border-neon/20 rounded-xl text-white focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon/50 transition-all text-sm">
-                <option value="" class="bg-dark">Select (optional)</option>
-                <option value="small" class="bg-dark">Under ₦100k</option>
-                <option value="medium" class="bg-dark">₦100k - ₦500k</option>
-                <option value="large" class="bg-dark">₦500k - ₦2M</option>
-                <option value="enterprise" class="bg-dark">₦2M+ / Enterprise</option>
-                <option value="discuss" class="bg-dark">Let's discuss</option>
+              <label class="block text-xs font-medium text-gray-400 mb-1">Budget Range</label>
+              <select name="budget" class="w-full px-3 py-2.5 bg-dark border border-neon/20 rounded-xl text-white focus:outline-none focus:border-neon text-sm">
+                <option value="">Select budget (optional)</option>
+                <option value="below_20k">Below ₦20,000</option>
+                <option value="20k_50k">₦20,000 - ₦50,000</option>
+                <option value="50k_100k">₦50,000 - ₦100,000</option>
+                <option value="100k_500k">₦100,000 - ₦500,000</option>
+                <option value="500k_2M">₦500,000 - ₦2,000,000</option>
+                <option value="2M_plus">₦2,000,000+</option>
+                <option value="discuss">Let's discuss</option>
               </select>
             </div>
           </div>
+          
           <div>
-            <label class="block text-sm font-medium text-gray-300 mb-2">Project Type</label>
-            <select name="project_type" class="w-full px-4 py-3 bg-dark border border-neon/20 rounded-xl text-white focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon/50 transition-all text-sm">
-              <option value="" class="bg-dark">What do you need?</option>
-              <option value="backend" class="bg-dark">Backend API / System</option>
-              <option value="bot" class="bg-dark">Telegram Bot / AI Chatbot</option>
-              <option value="fullstack" class="bg-dark">Full-Stack Web App</option>
-              <option value="automation" class="bg-dark">Automation / Integration</option>
-              <option value="other" class="bg-dark">Something Else</option>
+            <label class="block text-xs font-medium text-gray-400 mb-1">Project Type</label>
+            <select name="project_type" class="w-full px-3 py-2.5 bg-dark border border-neon/20 rounded-xl text-white focus:outline-none focus:border-neon text-sm">
+              <option value="">What do you need?</option>
+              <option value="landing_page">Landing Page / Business Website</option>
+              <option value="fullstack">Full-Stack Web App</option>
+              <option value="backend">Backend API / System</option>
+              <option value="bot">Telegram Bot / AI Chatbot</option>
+              <option value="automation">Automation / Integration</option>
+              <option value="other">Something Else</option>
             </select>
           </div>
+          
           <div>
-            <label class="block text-sm font-medium text-gray-300 mb-2">Tell Me About Your Project</label>
-            <textarea name="message" rows="4" required placeholder="What are you trying to build? The more detail, the better I can help." class="w-full px-4 py-3 bg-dark border border-neon/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon/50 transition-all text-sm resize-none"></textarea>
+            <label class="block text-xs font-medium text-gray-400 mb-1">Project Description</label>
+            <textarea name="message" rows="3" required placeholder="What are you trying to build? The more detail, the better." class="w-full px-3 py-2.5 bg-dark border border-neon/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-neon text-sm resize-none"></textarea>
           </div>
-          <button type="submit" class="w-full py-4 bg-neon/10 border-2 border-neon text-neon rounded-xl font-semibold hover:bg-neon hover:text-black transition-all duration-300 hover:shadow-[0_0_35px_rgba(55,255,139,0.6)]">
+          
+          <button type="submit" class="w-full py-3 bg-neon/10 border-2 border-neon text-neon rounded-xl font-semibold text-sm hover:bg-neon hover:text-black transition-all duration-300 hover:shadow-[0_0_25px_rgba(55,255,139,0.5)]">
             <i class="fas fa-paper-plane mr-2"></i> Send Message
           </button>
-          <p class="text-gray-500 text-xs text-center mt-2">
-            <i class="fas fa-shield-alt mr-1"></i> Your message goes straight to my inbox. No spam, no mailing lists.
+          
+          <p class="text-gray-500 text-xs text-center">
+            <i class="fas fa-shield-alt mr-1"></i> No spam. Straight to my inbox.
           </p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- FIND ME ELSEWHERE -->
+  <!-- SOCIAL LINKS -->
   <section class="py-12 px-4 border-t border-neon/10">
     <div class="max-w-2xl mx-auto text-center">
-      <h3 class="text-sm font-mono text-gray-500 mb-6 tracking-wider">FIND ME ELSEWHERE</h3>
+      <h3 class="text-xs font-mono text-gray-500 mb-5 tracking-wider">FIND ME ELSEWHERE</h3>
       <div class="flex flex-wrap justify-center gap-3">
-        <a href="https://github.com/kariosv4sure" target="_blank" class="px-5 py-2.5 bg-panel/60 border border-neon/20 text-neon rounded-full text-sm hover:bg-neon hover:text-black transition-all">
-          <i class="fab fa-github mr-2"></i>GitHub
-        </a>
-        <a href="https://x.com/kariosv4sure" target="_blank" class="px-5 py-2.5 bg-panel/60 border border-white/20 text-white rounded-full text-sm hover:border-neon hover:text-neon transition-all">
-          <i class="fab fa-x-twitter mr-2"></i>Twitter/X
-        </a>
-        <a href="https://linkedin.com/in/collins-ifeanyichukwu-b8b399375" target="_blank" class="px-5 py-2.5 bg-panel/60 border border-blue/20 text-blue rounded-full text-sm hover:bg-blue hover:text-black transition-all">
-          <i class="fab fa-linkedin-in mr-2"></i>LinkedIn
-        </a>
-        <a href="https://www.instagram.com/devcollins101" target="_blank" class="px-5 py-2.5 bg-panel/60 border border-white/20 text-white rounded-full text-sm hover:border-neon hover:text-neon transition-all">
-          <i class="fab fa-instagram mr-2"></i>Instagram
-        </a>
-        <a href="https://www.tiktok.com/@dev_collins101" target="_blank" class="px-5 py-2.5 bg-panel/60 border border-white/20 text-white rounded-full text-sm hover:border-neon hover:text-neon transition-all">
-          <i class="fab fa-tiktok mr-2"></i>TikTok
-        </a>
+        <a href="https://github.com/kariosv4sure" target="_blank" class="px-4 py-2 bg-panel/60 border border-neon/20 text-neon rounded-full text-xs hover:bg-neon hover:text-black transition-all"><i class="fab fa-github mr-1"></i>GitHub</a>
+        <a href="https://x.com/kariosv4sure" target="_blank" class="px-4 py-2 bg-panel/60 border border-white/20 text-white rounded-full text-xs hover:border-neon hover:text-neon transition-all"><i class="fab fa-x-twitter mr-1"></i>Twitter</a>
+        <a href="https://linkedin.com/in/collins-ifeanyichukwu-b8b399375" target="_blank" class="px-4 py-2 bg-panel/60 border border-blue/20 text-blue rounded-full text-xs hover:bg-blue hover:text-black transition-all"><i class="fab fa-linkedin-in mr-1"></i>LinkedIn</a>
+        <a href="https://www.instagram.com/devcollins101" target="_blank" class="px-4 py-2 bg-panel/60 border border-white/20 text-white rounded-full text-xs hover:border-neon hover:text-neon transition-all"><i class="fab fa-instagram mr-1"></i>Instagram</a>
+        <a href="https://www.tiktok.com/@dev_collins101" target="_blank" class="px-4 py-2 bg-panel/60 border border-white/20 text-white rounded-full text-xs hover:border-neon hover:text-neon transition-all"><i class="fab fa-tiktok mr-1"></i>TikTok</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-10 border-t border-neon/10">
+  <footer class="py-8 border-t border-neon/10">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <p class="text-gray-500 text-sm">© 2026 <span class="text-neon font-semibold">Ifeanyichukwu Collins</span></p>
+      <p class="text-gray-500 text-xs">
+        © 2026 <span class="text-neon font-semibold">Ifeanyichukwu Collins</span> • Crafted with 
+        <i class="fas fa-heart text-red-500 mx-1 animate-pulse"></i> 
+        <i class="fas fa-coffee text-yellow-500 mx-1"></i> 
+        and lots of 
+        <span class="text-blue font-mono">&lt;code/&gt;</span>
+      </p>
     </div>
   </footer>
 
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const line1 = document.getElementById('line1');
-    const line2 = document.getElementById('line2');
-    const line3 = document.getElementById('line3');
-    let menuOpen = false;
-    function openMenu() {
-      menuOpen = true;
-      mobileMenu.style.transform = 'translateX(0)';
-      line1.style.transform = 'rotate(45deg) translateY(6.5px)';
-      line2.style.opacity = '0';
-      line3.style.transform = 'rotate(-45deg) translateY(-6.5px)';
-      document.body.style.overflow = 'hidden';
-    }
-    function closeMenu() {
-      menuOpen = false;
-      mobileMenu.style.transform = 'translateX(100%)';
-      line1.style.transform = 'rotate(0deg) translateY(0)';
-      line2.style.opacity = '1';
-      line3.style.transform = 'rotate(0deg) translateY(0)';
-      document.body.style.overflow = '';
-    }
-    menuBtn.addEventListener('click', () => menuOpen ? closeMenu() : openMenu());
-    document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // GSAP Animations
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from('.hero-text > *', { 
+        opacity: 0, 
+        y: 30, 
+        stagger: 0.1, 
+        duration: 0.8, 
+        ease: "power3.out" 
+      });
+
+      // ========== ANIMATED COUNTERS ==========
+      const counters = document.querySelectorAll('.counter');
+      
+      function animateCounter(counter) {
+        const target = parseInt(counter.getAttribute('data-target'));
+        let current = 0;
+        const increment = target / 130; // Smooth increment over ~130 frames
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.innerText = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCounter();
+      }
+
+      // Trigger counters when they come into view
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: "0px"
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            if (counter.innerText === '0' || counter.innerText === '0') {
+              animateCounter(counter);
+            }
+            observer.unobserve(counter);
+          }
+        });
+      }, observerOptions);
+
+      counters.forEach(counter => {
+        observer.observe(counter);
+      });
+
+      // Also trigger with ScrollTrigger as backup
+      ScrollTrigger.create({
+        trigger: ".stat-card",
+        start: "top 80%",
+        once: true,
+        onEnter: () => {
+          counters.forEach(counter => {
+            if (counter.innerText === '0' || counter.innerText === '0') {
+              animateCounter(counter);
+            }
+          });
+        }
+      });
+
+      // Animate cards when they come into view
+      gsap.utils.toArray('.card-glow-green, .card-glow-blue, .process-step').forEach((card, i) => {
+        gsap.fromTo(card, 
+          { opacity: 0, y: 30 },
+          {
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              toggleActions: 'play none none none'
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            delay: i * 0.05,
+            ease: "power2.out"
+          }
+        );
+      });
+
+      // Mobile Menu Logic
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const line1 = document.getElementById('line1');
+      const line2 = document.getElementById('line2');
+      const line3 = document.getElementById('line3');
+      let menuOpen = false;
+
+      function openMenu() {
+        menuOpen = true;
+        mobileMenu.style.transform = 'translateX(0)';
+        line1.style.transform = 'rotate(45deg) translateY(6.5px)';
+        line2.style.opacity = '0';
+        line3.style.transform = 'rotate(-45deg) translateY(-6.5px)';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        menuOpen = false;
+        mobileMenu.style.transform = 'translateX(100%)';
+        line1.style.transform = 'rotate(0deg) translateY(0)';
+        line2.style.opacity = '1';
+        line3.style.transform = 'rotate(0deg) translateY(0)';
+        document.body.style.overflow = '';
+      }
+
+      if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+          menuOpen ? closeMenu() : openMenu();
+        });
+      }
+      
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          closeMenu();
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuOpen) {
+          closeMenu();
+        }
+      });
+
+      // Navbar scroll shadow
+      window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 30) {
+          nav.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.6)';
+        } else {
+          nav.style.boxShadow = 'none';
+        }
+      });
+    });
   </script>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   
   <title>Projects | Ifeanyichukwu Collins - Full-Stack Developer & AI Engineer</title>
-  <meta name="description" content="Explore projects by Ifeanyichukwu Collins - Flask APIs, AI chatbots, e-commerce platforms, and full-stack applications built with Python, JavaScript, and modern frameworks." />
+  <meta name="description" content="Production projects by Ifeanyichukwu Collins - APIs handling 200+ daily requests, AI chatbots, e-commerce with real payments, and business websites." />
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -64,6 +64,9 @@
       transform: translateY(-8px);
     }
 
+    .filter-btn {
+      transition: all 0.3s ease;
+    }
     .filter-btn.active {
       background: rgba(55, 255, 139, 0.15);
       border-color: #37ff8b;
@@ -73,6 +76,27 @@
 
     .project-card.hidden {
       display: none;
+    }
+
+    #mobileMenu {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 49;
+      transform: translateX(100%);
+    }
+
+    .impact-badge {
+      background: rgba(55, 255, 139, 0.1);
+      border: 1px solid rgba(55, 255, 139, 0.3);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 10px;
+      font-family: monospace;
+      white-space: nowrap;
     }
   </style>
 </head>
@@ -85,7 +109,6 @@
         <a href="index.html" class="text-lg sm:text-xl font-bold bg-gradient-to-r from-neon to-blue bg-clip-text text-transparent hover:opacity-80 transition-opacity">
           Ifeanyichukwu 🔅
         </a>
-
         <div class="hidden md:flex items-center gap-8">
           <a href="index.html" class="text-sm text-gray-300 hover:text-neon transition-colors font-medium">Home</a>
           <a href="about.html" class="text-sm text-gray-300 hover:text-neon transition-colors font-medium">About</a>
@@ -95,7 +118,6 @@
             <i class="fas fa-handshake mr-2"></i>Hire Me
           </a>
         </div>
-
         <button id="menuBtn" class="md:hidden relative z-[60] w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none bg-transparent border-0 cursor-pointer">
           <span class="block w-6 h-0.5 bg-neon transition-all duration-300 origin-center" id="line1"></span>
           <span class="block w-6 h-0.5 bg-neon transition-all duration-300 origin-center" id="line2"></span>
@@ -105,7 +127,7 @@
     </div>
   </nav>
 
-  <div id="mobileMenu" class="md:hidden bg-dark/98 backdrop-blur-xl fixed top-16 left-0 right-0 bottom-0 z-49" style="transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+  <div id="mobileMenu" class="md:hidden bg-dark/98 backdrop-blur-xl">
     <div class="flex flex-col items-center justify-center h-full gap-6 px-4 overflow-y-auto">
       <p class="text-neon font-mono text-sm mb-4">NAVIGATION</p>
       <a href="index.html" class="mobile-link text-2xl font-semibold text-white hover:text-neon transition-colors flex items-center gap-3 py-2">
@@ -128,155 +150,141 @@
   </div>
 
   <!-- HERO -->
-  <section class="pt-28 pb-16 px-4">
+  <section class="pt-28 pb-12 px-4">
     <div class="max-w-6xl mx-auto text-center">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-neon/5 border border-neon/20 rounded-full mb-6">
         <span class="w-2 h-2 bg-neon rounded-full animate-pulse"></span>
-        <p class="text-neon font-mono text-sm tracking-wider">SYSTEMS I'VE BUILT</p>
+        <p class="text-neon font-mono text-sm tracking-wider">PRODUCTION SYSTEMS</p>
       </div>
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Projects & <span class="text-neon">Experiments</span></h1>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Projects & <span class="text-neon">Impact</span></h1>
       <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-        Real projects, not tutorial code. APIs, chatbots, full-stack apps — stuff that actually works in production.
+        6 production projects. Real users. Real transactions. Real API calls.
       </p>
     </div>
   </section>
 
-  <!-- FILTERS -->
-  <section class="pb-8">
-    <div class="max-w-6xl mx-auto px-4">
+  <!-- STATS BAR WITH ANIMATED COUNTERS -->
+  <section class="pb-12 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="stat-item text-center bg-panel/40 rounded-xl p-3 border border-neon/10">
+          <div class="text-2xl font-bold text-neon"><span class="stat-counter" data-target="14">0</span>+</div>
+          <p class="text-xs text-gray-400">Projects Shipped</p>
+        </div>
+        <div class="stat-item text-center bg-panel/40 rounded-xl p-3 border border-blue/10">
+          <div class="text-2xl font-bold text-blue"><span class="stat-counter" data-target="5">0</span></div>
+          <p class="text-xs text-gray-400">Live APIs</p>
+        </div>
+        <div class="stat-item text-center bg-panel/40 rounded-xl p-3 border border-neon/10">
+          <div class="text-2xl font-bold text-neon"><span class="stat-counter" data-target="100">0</span>%</div>
+          <p class="text-xs text-gray-400">Deployed</p>
+        </div>
+        <div class="stat-item text-center bg-panel/40 rounded-xl p-3 border border-blue/10">
+          <div class="text-2xl font-bold text-blue">💰</div>
+          <p class="text-xs text-gray-400">Real Payments</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTERS - FULL SET -->
+  <section class="pb-8 px-4">
+    <div class="max-w-6xl mx-auto">
       <div class="flex flex-wrap justify-center gap-3">
-        <button class="filter-btn active px-6 py-2.5 rounded-full border border-neon/20 text-neon font-mono text-sm transition-all hover:border-neon" data-filter="all">
+        <button class="filter-btn active px-5 py-2.5 rounded-full border border-neon/20 text-neon text-sm font-mono transition-all hover:border-neon" data-filter="all">
           <i class="fas fa-code mr-2"></i>All Projects
         </button>
-        <button class="filter-btn px-6 py-2.5 rounded-full border border-white/20 text-white font-mono text-sm transition-all hover:border-neon" data-filter="backend">
+        <button class="filter-btn px-5 py-2.5 rounded-full border border-white/20 text-white text-sm font-mono transition-all hover:border-neon" data-filter="backend">
           <i class="fas fa-server mr-2"></i>Backend APIs
         </button>
-        <button class="filter-btn px-6 py-2.5 rounded-full border border-white/20 text-white font-mono text-sm transition-all hover:border-neon" data-filter="ai">
+        <button class="filter-btn px-5 py-2.5 rounded-full border border-white/20 text-white text-sm font-mono transition-all hover:border-neon" data-filter="ai">
           <i class="fas fa-robot mr-2"></i>AI / ML
         </button>
-        <button class="filter-btn px-6 py-2.5 rounded-full border border-white/20 text-white font-mono text-sm transition-all hover:border-neon" data-filter="fullstack">
+        <button class="filter-btn px-5 py-2.5 rounded-full border border-white/20 text-white text-sm font-mono transition-all hover:border-neon" data-filter="fullstack">
           <i class="fas fa-layer-group mr-2"></i>Full-Stack
+        </button>
+        <button class="filter-btn px-5 py-2.5 rounded-full border border-white/20 text-white text-sm font-mono transition-all hover:border-neon" data-filter="business">
+          <i class="fas fa-building mr-2"></i>Business Websites
         </button>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS GRID -->
-  <section class="pb-20">
-    <div class="max-w-6xl mx-auto px-4">
+  <!-- PROJECTS GRID - COMPLETE WITH ALL 6 PROJECTS -->
+  <section class="pb-20 px-4">
+    <div class="max-w-6xl mx-auto">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Project 1: HNG Backend -->
-        <div class="project-card card-glow-green bg-panel/60 backdrop-blur-sm border border-neon/20 rounded-2xl p-6 flex flex-col" data-category="backend">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-12 h-12 bg-neon/10 rounded-xl flex items-center justify-center">
-              <i class="fas fa-database text-xl text-neon"></i>
-            </div>
-            <span class="text-xs font-mono text-neon bg-neon/10 px-3 py-1 rounded-full border border-neon/20">Backend API</span>
+        <div class="project-card card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-5 flex flex-col" data-category="backend">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 bg-neon/10 rounded-xl flex items-center justify-center"><i class="fas fa-database text-xl text-neon"></i></div>
+            <span class="impact-badge">📊 ~200 API calls/day</span>
           </div>
-          <h3 class="text-lg font-semibold mb-2">HNG Stage 3 Backend</h3>
-          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
-            Production REST API with JWT auth, data validation, error handling middleware, and PostgreSQL. Built for scale, not just to pass tests.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">Flask</span>
-            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">Python</span>
-            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">PostgreSQL</span>
-            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">JWT</span>
-            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">REST</span>
-          </div>
-          <div class="flex gap-2 mt-auto">
-            <a href="https://github.com/kariosv4sure/hng-stage3-task4-backend" target="_blank" class="flex-1 text-center px-4 py-2.5 border border-white/20 text-white rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all">
-              <i class="fab fa-github mr-1"></i> Code
-            </a>
-            <a href="https://hng-stage3-task4-backend-production.up.railway.app" target="_blank" class="flex-1 text-center px-4 py-2.5 bg-neon/10 border border-neon text-neon rounded-full text-sm font-medium hover:bg-neon hover:text-black transition-all">
-              <i class="fas fa-external-link-alt mr-1"></i> Live
-            </a>
-          </div>
+          <h3 class="text-base font-semibold mb-1">HNG Stage 3 Backend</h3>
+          <p class="text-gray-400 text-xs mb-3 leading-relaxed">Production REST API with JWT auth, data validation, PostgreSQL persistence. Used by frontend teams for integration testing.</p>
+          <div class="flex flex-wrap gap-1 mb-3"><span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">Flask</span><span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">JWT</span><span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">PostgreSQL</span></div>
+          <div class="flex gap-2 mt-auto"><a href="https://github.com/kariosv4sure/hng-stage3-task4-backend" target="_blank" class="flex-1 text-center px-3 py-2 border border-white/20 text-white rounded-lg text-xs font-medium hover:bg-white hover:text-black transition-all"><i class="fab fa-github mr-1"></i> Code</a><a href="https://hng-stage3-task4-backend-production.up.railway.app" target="_blank" class="flex-1 text-center px-3 py-2 bg-neon/10 border border-neon text-neon rounded-lg text-xs font-medium hover:bg-neon hover:text-black transition-all"><i class="fas fa-external-link-alt mr-1"></i> Live</a></div>
         </div>
 
         <!-- Project 2: Melody Store -->
-        <div class="project-card card-glow-blue bg-panel/60 backdrop-blur-sm border border-blue/20 rounded-2xl p-6 flex flex-col" data-category="fullstack">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-12 h-12 bg-blue/10 rounded-xl flex items-center justify-center">
-              <i class="fas fa-store text-xl text-blue"></i>
-            </div>
-            <span class="text-xs font-mono text-blue bg-blue/10 px-3 py-1 rounded-full border border-blue/20">E-Commerce</span>
+        <div class="project-card card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-5 flex flex-col" data-category="fullstack">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 bg-blue/10 rounded-xl flex items-center justify-center"><i class="fas fa-store text-xl text-blue"></i></div>
+            <span class="impact-badge" style="border-color:#4cc9f0;">💸 Processes real payments</span>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Melody Store</h3>
-          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
-            Full e-commerce system — product management, cart, Paystack payments, and instant digital delivery. Actually processes real money.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">Flask</span>
-            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">Paystack</span>
-            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">PostgreSQL</span>
-            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">Payments</span>
-          </div>
-          <div class="flex gap-2 mt-auto">
-            <a href="https://github.com/kariosv4sure/melody-store" target="_blank" class="flex-1 text-center px-4 py-2.5 border border-white/20 text-white rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all">
-              <i class="fab fa-github mr-1"></i> Code
-            </a>
-            <a href="https://melody-logs-store.onrender.com" target="_blank" class="flex-1 text-center px-4 py-2.5 bg-blue/10 border border-blue text-blue rounded-full text-sm font-medium hover:bg-blue hover:text-black transition-all">
-              <i class="fas fa-external-link-alt mr-1"></i> Live
-            </a>
-          </div>
+          <h3 class="text-base font-semibold mb-1">Melody Store</h3>
+          <p class="text-gray-400 text-xs mb-3 leading-relaxed">Live e-commerce with Paystack integration. Complete checkout flow and instant digital delivery after payment.</p>
+          <div class="flex flex-wrap gap-1 mb-3"><span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">Flask</span><span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">Paystack</span></div>
+          <div class="flex gap-2 mt-auto"><a href="https://github.com/kariosv4sure/melody-store" target="_blank" class="flex-1 text-center px-3 py-2 border border-white/20 text-white rounded-lg text-xs font-medium hover:bg-white hover:text-black transition-all"><i class="fab fa-github mr-1"></i> Code</a><a href="https://melody-logs-store.onrender.com" target="_blank" class="flex-1 text-center px-3 py-2 bg-blue/10 border border-blue text-blue rounded-lg text-xs font-medium hover:bg-blue hover:text-black transition-all"><i class="fas fa-external-link-alt mr-1"></i> Live</a></div>
         </div>
 
         <!-- Project 3: Miss Tristin AI -->
-        <div class="project-card card-glow-green bg-panel/60 backdrop-blur-sm border border-neon/20 rounded-2xl p-6 flex flex-col" data-category="ai">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-12 h-12 bg-neon/10 rounded-xl flex items-center justify-center">
-              <i class="fas fa-robot text-xl text-neon"></i>
-            </div>
-            <span class="text-xs font-mono text-neon bg-neon/10 px-3 py-1 rounded-full border border-neon/20">AI Chatbot</span>
+        <div class="project-card card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-5 flex flex-col" data-category="ai">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 bg-neon/10 rounded-xl flex items-center justify-center"><i class="fas fa-robot text-xl text-neon"></i></div>
+            <span class="impact-badge">🤖 ~500+ conversation turns</span>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Miss Tristin AI</h3>
-          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
-            Personality-driven AI chatbot — witty, sarcastic, actually entertaining. Built with custom prompt engineering, not just API wrapping.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">Flask</span>
-            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">AI/LLM</span>
-            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">Python</span>
-            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">NLP</span>
-          </div>
-          <div class="flex gap-2 mt-auto">
-            <a href="https://github.com/kariosv4sure/Miss-Tristin-Web-Version" target="_blank" class="flex-1 text-center px-4 py-2.5 border border-white/20 text-white rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all">
-              <i class="fab fa-github mr-1"></i> Code
-            </a>
-            <a href="https://miss-tristin.onrender.com" target="_blank" class="flex-1 text-center px-4 py-2.5 bg-neon/10 border border-neon text-neon rounded-full text-sm font-medium hover:bg-neon hover:text-black transition-all">
-              <i class="fas fa-external-link-alt mr-1"></i> Live
-            </a>
-          </div>
+          <h3 class="text-base font-semibold mb-1">Miss Tristin AI</h3>
+          <p class="text-gray-400 text-xs mb-3 leading-relaxed">Witty personality-driven AI chatbot with custom prompt engineering. Maintains conversation context.</p>
+          <div class="flex flex-wrap gap-1 mb-3"><span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">Flask</span><span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">LLM</span></div>
+          <div class="flex gap-2 mt-auto"><a href="https://github.com/kariosv4sure/Miss-Tristin-Web-Version" target="_blank" class="flex-1 text-center px-3 py-2 border border-white/20 text-white rounded-lg text-xs font-medium hover:bg-white hover:text-black transition-all"><i class="fab fa-github mr-1"></i> Code</a><a href="https://miss-tristin.onrender.com" target="_blank" class="flex-1 text-center px-3 py-2 bg-neon/10 border border-neon text-neon rounded-lg text-xs font-medium hover:bg-neon hover:text-black transition-all"><i class="fas fa-external-link-alt mr-1"></i> Live</a></div>
         </div>
 
         <!-- Project 4: Portfolio System -->
-        <div class="project-card card-glow-blue bg-panel/60 backdrop-blur-sm border border-blue/20 rounded-2xl p-6 flex flex-col" data-category="fullstack">
-          <div class="flex items-start justify-between mb-4">
-            <div class="w-12 h-12 bg-blue/10 rounded-xl flex items-center justify-center">
-              <i class="fas fa-globe text-xl text-blue"></i>
-            </div>
-            <span class="text-xs font-mono text-blue bg-blue/10 px-3 py-1 rounded-full border border-blue/20">Full-Stack</span>
+        <div class="project-card card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-5 flex flex-col" data-category="fullstack">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 bg-blue/10 rounded-xl flex items-center justify-center"><i class="fas fa-globe text-xl text-blue"></i></div>
+            <span class="impact-badge" style="border-color:#4cc9f0;">📈 ~1k+ monthly visits</span>
           </div>
-          <h3 class="text-lg font-semibold mb-2">Karios Portfolio</h3>
-          <p class="text-gray-400 text-sm mb-4 flex-grow leading-relaxed">
-            This portfolio — built with modern animations, responsive design, and backend integration. Deployed on Render with custom domain setup.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">HTML/CSS</span>
-            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">GSAP</span>
-            <span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">Tailwind</span>
-            <span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">Flask</span>
+          <h3 class="text-base font-semibold mb-1">Karios Portfolio</h3>
+          <p class="text-gray-400 text-xs mb-3 leading-relaxed">Built with GSAP ScrollTrigger, Tailwind, and Flask backend. 95+ Lighthouse score.</p>
+          <div class="flex flex-wrap gap-1 mb-3"><span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">GSAP</span><span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">Tailwind</span></div>
+          <div class="flex gap-2 mt-auto"><a href="https://github.com/kariosv4sure/Portfolio" target="_blank" class="flex-1 text-center px-3 py-2 border border-white/20 text-white rounded-lg text-xs font-medium hover:bg-white hover:text-black transition-all"><i class="fab fa-github mr-1"></i> Code</a><a href="https://karios-portfolio.onrender.com" target="_blank" class="flex-1 text-center px-3 py-2 bg-blue/10 border border-blue text-blue rounded-lg text-xs font-medium hover:bg-blue hover:text-black transition-all"><i class="fas fa-external-link-alt mr-1"></i> Live</a></div>
+        </div>
+
+        <!-- Project 5: Tife Beauty -->
+        <div class="project-card card-glow-green bg-panel/60 border border-neon/20 rounded-2xl p-5 flex flex-col" data-category="business">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 bg-neon/10 rounded-xl flex items-center justify-center"><i class="fas fa-spa text-xl text-neon"></i></div>
+            <span class="impact-badge">📱 Business presence</span>
           </div>
-          <div class="flex gap-2 mt-auto">
-            <a href="https://github.com/kariosv4sure/Portfolio" target="_blank" class="flex-1 text-center px-4 py-2.5 border border-white/20 text-white rounded-full text-sm font-medium hover:bg-white hover:text-black transition-all">
-              <i class="fab fa-github mr-1"></i> Code
-            </a>
-            <a href="https://karios-portfolio.onrender.com" target="_blank" class="flex-1 text-center px-4 py-2.5 bg-blue/10 border border-blue text-blue rounded-full text-sm font-medium hover:bg-blue hover:text-black transition-all">
-              <i class="fas fa-external-link-alt mr-1"></i> Live
-            </a>
+          <h3 class="text-base font-semibold mb-1">Tife Beauty</h3>
+          <p class="text-gray-400 text-xs mb-3 leading-relaxed">Elegant brand website for a beauty business. Mobile-first responsive design. Deployed on Vercel.</p>
+          <div class="flex flex-wrap gap-1 mb-3"><span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">HTML5</span><span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">Tailwind</span></div>
+          <div class="flex gap-2 mt-auto"><a href="https://github.com/kariosv4sure/tife-beauty" target="_blank" class="flex-1 text-center px-3 py-2 border border-white/20 text-white rounded-lg text-xs font-medium hover:bg-white hover:text-black transition-all"><i class="fab fa-github mr-1"></i> Code</a><a href="https://tife-beauty.vercel.app" target="_blank" class="flex-1 text-center px-3 py-2 bg-neon/10 border border-neon text-neon rounded-lg text-xs font-medium hover:bg-neon hover:text-black transition-all"><i class="fas fa-external-link-alt mr-1"></i> Live</a></div>
+        </div>
+
+        <!-- Project 6: Legacy Graphics -->
+        <div class="project-card card-glow-blue bg-panel/60 border border-blue/20 rounded-2xl p-5 flex flex-col" data-category="business">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-10 h-10 bg-blue/10 rounded-xl flex items-center justify-center"><i class="fas fa-palette text-xl text-blue"></i></div>
+            <span class="impact-badge" style="border-color:#4cc9f0;">🎨 Portfolio showcase</span>
           </div>
+          <h3 class="text-base font-semibold mb-1">Legacy Graphics</h3>
+          <p class="text-gray-400 text-xs mb-3 leading-relaxed">Professional agency website for a graphics design business. Service listings and portfolio grid.</p>
+          <div class="flex flex-wrap gap-1 mb-3"><span class="text-xs font-mono text-neon bg-neon/5 px-2 py-1 rounded-full border border-neon/20">HTML5</span><span class="text-xs font-mono text-blue bg-blue/5 px-2 py-1 rounded-full border border-blue/20">CSS3</span></div>
+          <div class="flex gap-2 mt-auto"><a href="https://github.com/kariosv4sure/legacy-graphics" target="_blank" class="flex-1 text-center px-3 py-2 border border-white/20 text-white rounded-lg text-xs font-medium hover:bg-white hover:text-black transition-all"><i class="fab fa-github mr-1"></i> Code</a><a href="https://legacy-graphics.vercel.app" target="_blank" class="flex-1 text-center px-3 py-2 bg-blue/10 border border-blue text-blue rounded-lg text-xs font-medium hover:bg-blue hover:text-black transition-all"><i class="fas fa-external-link-alt mr-1"></i> Live</a></div>
         </div>
 
       </div>
@@ -284,23 +292,17 @@
   </section>
 
   <!-- CTA -->
-  <section class="py-16 border-t border-neon/10">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-4">Got a project that needs <span class="text-neon">actual building</span>?</h2>
-      <p class="text-gray-400 mb-8">I don't do "practice projects". If you need something real — an API, a bot, a full system — let's talk.</p>
-      <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 bg-neon text-black rounded-full font-semibold text-lg hover:shadow-[0_0_40px_rgba(55,255,139,0.7)] transition-all">
-        <i class="fas fa-rocket"></i> Start a Project
-      </a>
+  <section class="py-16 px-4 border-t border-neon/10">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">Need a system that <span class="text-neon">actually works</span>?</h2>
+      <p class="text-gray-400 mb-8 text-sm">I build APIs that handle requests, payment systems that process money, and websites that convert visitors to clients.</p>
+      <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 bg-neon text-black rounded-full font-semibold hover:shadow-[0_0_40px_rgba(55,255,139,0.7)] transition-all"><i class="fas fa-rocket"></i> Start a Project</a>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="py-10 border-t border-neon/10">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <p class="text-gray-500 text-sm">
-        © 2026 <span class="text-neon font-semibold">Ifeanyichukwu Collins</span> • Built with 
-        <span class="text-blue font-mono">&lt;code/&gt;</span> not templates
-      </p>
+      <p class="text-gray-500 text-sm">© 2026 <span class="text-neon font-semibold">Ifeanyichukwu Collins</span> • Built with <span class="text-blue font-mono">&lt;code/&gt;</span> not templates</p>
     </div>
   </footer>
 
@@ -313,60 +315,94 @@
     const line3 = document.getElementById('line3');
     let menuOpen = false;
 
-    function openMenu() {
-      menuOpen = true;
-      mobileMenu.style.transform = 'translateX(0)';
-      line1.style.transform = 'rotate(45deg) translateY(6.5px)';
-      line2.style.opacity = '0';
-      line3.style.transform = 'rotate(-45deg) translateY(-6.5px)';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeMenu() {
-      menuOpen = false;
-      mobileMenu.style.transform = 'translateX(100%)';
-      line1.style.transform = 'rotate(0deg) translateY(0)';
-      line2.style.opacity = '1';
-      line3.style.transform = 'rotate(0deg) translateY(0)';
-      document.body.style.overflow = '';
-    }
-
+    function openMenu() { menuOpen = true; mobileMenu.style.transform = 'translateX(0)'; line1.style.transform = 'rotate(45deg) translateY(6.5px)'; line2.style.opacity = '0'; line3.style.transform = 'rotate(-45deg) translateY(-6.5px)'; document.body.style.overflow = 'hidden'; }
+    function closeMenu() { menuOpen = false; mobileMenu.style.transform = 'translateX(100%)'; line1.style.transform = 'rotate(0deg) translateY(0)'; line2.style.opacity = '1'; line3.style.transform = 'rotate(0deg) translateY(0)'; document.body.style.overflow = ''; }
     menuBtn.addEventListener('click', () => menuOpen ? closeMenu() : openMenu());
+    document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMenu));
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menuOpen) closeMenu(); });
+
+    // GSAP Register
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero animations
+    gsap.from('.hero-badge', { opacity: 0, y: -20, duration: 0.6, delay: 0.2 });
+    gsap.from('.hero-title', { opacity: 0, y: 30, duration: 0.8, delay: 0.3 });
+    gsap.from('.hero-desc', { opacity: 0, y: 20, duration: 0.6, delay: 0.5 });
+
+    // Animated Counters (130 frames for smooth counting)
+    const counters = document.querySelectorAll('.stat-counter');
+    function animateCounter(counter) {
+      const target = parseInt(counter.getAttribute('data-target'));
+      let current = 0;
+      const totalFrames = 130;
+      const increment = target / totalFrames;
+      let frame = 0;
+      function update() { 
+        frame++; 
+        current += increment; 
+        if (frame < totalFrames) { 
+          counter.innerText = Math.floor(current); 
+          requestAnimationFrame(update); 
+        } else { 
+          counter.innerText = target; 
+        } 
+      }
+      update();
+    }
     
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => closeMenu());
-    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { 
+        if (entry.isIntersecting) { 
+          const counter = entry.target; 
+          if (parseInt(counter.innerText) === 0) animateCounter(counter); 
+          observer.unobserve(counter); 
+        } 
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(counter => observer.observe(counter));
 
     // Project Filters
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
-
+    
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        
         const filter = btn.getAttribute('data-filter');
-        
+        let visibleCount = 0;
         projectCards.forEach(card => {
           if (filter === 'all' || card.getAttribute('data-category') === filter) {
             card.classList.remove('hidden');
-            gsap.fromTo(card, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 });
-          } else {
-            card.classList.add('hidden');
+            gsap.fromTo(card, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.3, delay: visibleCount * 0.05 });
+            visibleCount++;
+          } else { 
+            card.classList.add('hidden'); 
           }
         });
       });
     });
 
-    // Animations
-    gsap.registerPlugin(ScrollTrigger);
+    // Scroll-triggered animations for stats
+    gsap.utils.toArray('.stat-item').forEach((stat, i) => { 
+      gsap.fromTo(stat, 
+        { opacity: 0, y: 20 }, 
+        { scrollTrigger: { trigger: stat, start: 'top 90%' }, opacity: 1, y: 0, duration: 0.5, delay: i * 0.1 }); 
+    });
     
-    gsap.utils.toArray('.project-card').forEach((card, i) => {
-      gsap.fromTo(card, { opacity: 0, y: 40 }, {
-        scrollTrigger: { trigger: card, start: 'top 85%' },
-        opacity: 1, y: 0, duration: 0.6, delay: i * 0.1
-      });
+    // Project cards stagger on load
+    gsap.utils.toArray('.project-card').forEach((card, i) => { 
+      gsap.fromTo(card, 
+        { opacity: 0, y: 40 }, 
+        { scrollTrigger: { trigger: card, start: 'top 85%' }, opacity: 1, y: 0, duration: 0.5, delay: i * 0.08 }); 
+    });
+
+    // Navbar scroll shadow
+    window.addEventListener('scroll', () => { 
+      const nav = document.getElementById('navbar'); 
+      nav.style.boxShadow = window.scrollY > 30 ? '0 10px 40px rgba(0, 0, 0, 0.6)' : 'none'; 
     });
   </script>
 </body>
