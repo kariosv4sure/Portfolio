@@ -1,0 +1,31 @@
+{
+  "name": "Ifeanyichukwu Collins | Full-Stack Developer & AI Engineer",
+  "short_name": "Collins",
+  "description": "Full-Stack Developer specializing in Flask, Django, AI Integration & Modern Web Apps. Building powerful backend systems, beautiful frontends, and intelligent AI-powered applications.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0b0f14",
+  "background_color": "#0b0f14",
+  "icons": [
+    {
+      "src": "assets/images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: #0b0f14;
+  color: #eaf2ff;
+  overflow-x: hidden;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0b0f14; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #37ff8b, #4cc9f0);
+  border-radius: 3px;
+}
+
+/* --- Card glow hovers --- */
+.card-glow-green {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-glow-green:hover {
+  box-shadow: 0 0 40px rgba(55, 255, 139, 0.5), 0 0 80px rgba(55, 255, 139, 0.3);
+  border-color: rgba(55, 255, 139, 0.8);
+  transform: translateY(-8px);
+}
+
+.card-glow-blue {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-glow-blue:hover {
+  box-shadow: 0 0 40px rgba(76, 201, 240, 0.5), 0 0 80px rgba(76, 201, 240, 0.3);
+  border-color: rgba(76, 201, 240, 0.8);
+  transform: translateY(-8px);
+}
+
+/* --- Avatar glow (index + about) --- */
+.glow-avatar {
+  animation: avatarGlow 3s ease-in-out infinite;
+}
+@keyframes avatarGlow {
+  0%, 100% { box-shadow: 0 0 40px rgba(55, 255, 139, 0.4); }
+  50% {
+    box-shadow: 0 0 80px rgba(55, 255, 139, 0.7),
+                0 0 120px rgba(76, 201, 240, 0.4);
+  }
+}
+
+/* --- Typewriter cursor (index only) --- */
+.typewriter-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: #37ff8b;
+  font-weight: 300;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* --- Mobile menu overlay (all pages) --- */
+#mobileMenu {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 49;
+  transform: translateX(100%);
+  visibility: visible;
+  opacity: 1;
+}
+
+/* --- Projects page: filters & cards --- */
+.filter-btn {
+  transition: all 0.3s ease;
+}
+.filter-btn.active {
+  background: rgba(55, 255, 139, 0.15);
+  border-color: #37ff8b;
+  color: #37ff8b;
+  box-shadow: 0 0 20px rgba(55, 255, 139, 0.3);
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+.impact-badge {
+  background: rgba(55, 255, 139, 0.1);
+  border: 1px solid rgba(55, 255, 139, 0.3);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+/* --- About page: skills & timeline --- */
+.skill-bar-wrapper {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  height: 6px;
+}
+.skill-bar-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: 999px;
+  transition: width 1.5s cubic-bezier(0.22, 0.97, 0.36, 1);
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background: #37ff8b;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #37ff8b;
+}
+
+/* --- Stat numbers (about + contact) --- */
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+}

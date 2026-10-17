@@ -3,114 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  
+
+  <!-- Favicons & PWA -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
   <title>About | Ifeanyichukwu Collins - Systems Engineer & Builder</title>
   <meta name="description" content="Full-stack developer from Imo State, Nigeria. Building systems people actually use. APIs, AI chatbots, Telegram bots, and full-stack apps with Flask, Python, and modern JavaScript." />
-  
+
+  <link rel="canonical" href="https://karios-portfolio.onrender.com/about.html" />
+
+  <!-- External libraries (CDN) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
-  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            neon: '#37ff8b',
-            blue: '#4cc9f0',
-            dark: '#0b0f14',
-            panel: '#0f1520',
-          },
-          fontFamily: {
-            space: ['Space Grotesk', 'sans-serif'],
-            mono: ['Fira Code', 'monospace'],
-          }
-        }
-      }
-    }
-  </script>
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: 'Space Grotesk', sans-serif; 
-      background: #0b0f14; 
-      color: #eaf2ff; 
-      overflow-x: hidden;
-    }
-    
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0b0f14; }
-    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #37ff8b, #4cc9f0); border-radius: 3px; }
-
-    .card-glow-green {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .card-glow-green:hover {
-      box-shadow: 0 0 40px rgba(55, 255, 139, 0.4);
-      border-color: rgba(55, 255, 139, 0.7);
-      transform: translateY(-6px);
-    }
-    
-    .card-glow-blue {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .card-glow-blue:hover {
-      box-shadow: 0 0 40px rgba(76, 201, 240, 0.4);
-      border-color: rgba(76, 201, 240, 0.7);
-      transform: translateY(-6px);
-    }
-
-    .glow-avatar {
-      animation: avatarGlow 3s ease-in-out infinite;
-    }
-    @keyframes avatarGlow {
-      0%, 100% { box-shadow: 0 0 30px rgba(55, 255, 139, 0.3); }
-      50% { box-shadow: 0 0 60px rgba(55, 255, 139, 0.5), 0 0 90px rgba(76, 201, 240, 0.3); }
-    }
-
-    #mobileMenu {
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: fixed;
-      top: 64px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 49;
-      transform: translateX(100%);
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .skill-bar-wrapper {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 999px;
-      overflow: hidden;
-      height: 6px;
-    }
-    .skill-bar-fill {
-      width: 0%;
-      height: 100%;
-      border-radius: 999px;
-      transition: width 1.5s cubic-bezier(0.22, 0.97, 0.36, 1);
-    }
-
-    .timeline-dot {
-      width: 12px;
-      height: 12px;
-      background: #37ff8b;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #37ff8b;
-    }
-
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-    }
-  </style>
+  <!-- Compiled Tailwind (locally built) -->
+  <link rel="stylesheet" href="assets/css/tailwind.css" />
+  <!-- Custom CSS (keyframes, hovers, mobile menu) -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
@@ -198,7 +113,7 @@
         <div class="flex justify-center md:justify-end">
           <div class="relative">
             <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full border-4 border-neon overflow-hidden glow-avatar">
-              <img src="me.jpg" alt="Ifeanyichukwu Collins" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%230f1520%22 stroke=%22%2337ff8b%22 stroke-width=%222%22/%3E%3Ccircle cx=%2250%22 cy=%2238%22 r=%2214%22 fill=%22%2337ff8b%22 opacity=%220.7%22/%3E%3Cpath d=%22M28 68 Q50 52 72 68%22 stroke=%22%2337ff8b%22 stroke-width=%223%22 fill=%22none%22/%3E%3Ctext x=%2250%22 y=%2285%22 font-size=%228%22 text-anchor=%22middle%22 fill=%22%2337ff8b%22 font-family=%22monospace%22%3EDeveloper%3C/text%3E%3C/svg%3E'" />
+              <img src="assets/images/me.jpg" alt="Ifeanyichukwu Collins" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%230f1520%22 stroke=%22%2337ff8b%22 stroke-width=%222%22/%3E%3Ccircle cx=%2250%22 cy=%2238%22 r=%2214%22 fill=%22%2337ff8b%22 opacity=%220.7%22/%3E%3Cpath d=%22M28 68 Q50 52 72 68%22 stroke=%22%2337ff8b%22 stroke-width=%223%22 fill=%22none%22/%3E%3Ctext x=%2250%22 y=%2285%22 font-size=%228%22 text-anchor=%22middle%22 fill=%22%2337ff8b%22 font-family=%22monospace%22%3EDeveloper%3C/text%3E%3C/svg%3E'" />
             </div>
             <div class="absolute -top-3 -right-3 w-7 h-7 bg-blue rounded-full opacity-40 animate-pulse"></div>
             <div class="absolute -bottom-3 -left-3 w-5 h-5 bg-neon rounded-full opacity-40 animate-pulse"></div>
@@ -292,7 +207,7 @@
   <section class="py-12 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-2xl font-bold text-center mb-8">My <span class="text-neon">Journey</span></h2>
-      <div class="relative pl-6 border-l-2 border-neon/30">
+      <div class="timeline-line relative pl-6 border-l-2 border-neon/30">
         <div class="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-neon to-blue origin-top scale-y-0" id="timelineFill"></div>
         
         <div class="mb-6 relative">
@@ -371,154 +286,6 @@
       </p>
     </div>
   </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      
-      gsap.registerPlugin(ScrollTrigger);
-
-      // Hero animation
-      gsap.from('.hero-text > *', { 
-        opacity: 0, 
-        y: 25, 
-        stagger: 0.1, 
-        duration: 0.7, 
-        ease: "power3.out" 
-      });
-      gsap.from('.glow-avatar', { scale: 0.8, opacity: 0, duration: 0.8, delay: 0.3 });
-
-      // ========== ANIMATED COUNTERS (Slower) ==========
-      const counters = document.querySelectorAll('.counter');
-      
-      function animateCounter(counter) {
-        const target = parseInt(counter.getAttribute('data-target'));
-        let current = 0;
-        const increment = target / 80; // Slower: 80 steps
-        const updateCounter = () => {
-          current += increment;
-          if (current < target) {
-            counter.innerText = Math.floor(current);
-            requestAnimationFrame(updateCounter);
-          } else {
-            counter.innerText = target;
-          }
-        };
-        updateCounter();
-      }
-
-      // Intersection Observer for counters
-      const observerOptions = { threshold: 0.5, rootMargin: "0px" };
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const counter = entry.target;
-            if (counter.innerText === '0') {
-              animateCounter(counter);
-            }
-            observer.unobserve(counter);
-          }
-        });
-      }, observerOptions);
-
-      counters.forEach(counter => observer.observe(counter));
-
-      // ========== SKILL BARS ANIMATION ==========
-      const skillBars = document.querySelectorAll('.skill-bar-fill');
-      const percentSpans = document.querySelectorAll('.skill-percent');
-
-      const animateSkills = () => {
-        skillBars.forEach(bar => {
-          const skillValue = bar.getAttribute('data-skill');
-          bar.style.width = skillValue + '%';
-        });
-        
-        percentSpans.forEach((span, idx) => {
-          const parentBar = span.closest('.skill-item')?.querySelector('.skill-bar-fill');
-          const targetVal = parentBar ? parseInt(parentBar.getAttribute('data-skill')) : 0;
-          let currentVal = 0;
-          const step = targetVal / 60;
-          const interval = setInterval(() => {
-            currentVal += step;
-            if (currentVal >= targetVal) {
-              span.innerText = targetVal + '%';
-              clearInterval(interval);
-            } else {
-              span.innerText = Math.floor(currentVal) + '%';
-            }
-          }, 20);
-        });
-      };
-
-      ScrollTrigger.create({ 
-        trigger: ".skill-bar-wrapper", 
-        start: "top 80%", 
-        once: true, 
-        onEnter: () => animateSkills() 
-      });
-
-      // ========== TIMELINE ANIMATION ==========
-      ScrollTrigger.create({ 
-        trigger: ".timeline-line", 
-        start: "top 80%", 
-        once: true, 
-        onEnter: () => gsap.to("#timelineFill", { scaleY: 1, duration: 1.2, ease: "power2.out" }) 
-      });
-
-      // ========== CARD STAGGER ANIMATIONS ==========
-      gsap.utils.toArray('.card-glow-green, .card-glow-blue, .stat-card').forEach((card, i) => {
-        gsap.fromTo(card, 
-          { opacity: 0, y: 25 },
-          {
-            scrollTrigger: { trigger: card, start: 'top 88%', toggleActions: 'play none none none' },
-            opacity: 1, y: 0, duration: 0.5, delay: i * 0.05, ease: "power2.out"
-          }
-        );
-      });
-
-      // ========== MOBILE MENU ==========
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      const line1 = document.getElementById('line1');
-      const line2 = document.getElementById('line2');
-      const line3 = document.getElementById('line3');
-      let menuOpen = false;
-
-      function openMenu() {
-        menuOpen = true;
-        mobileMenu.style.transform = 'translateX(0)';
-        line1.style.transform = 'rotate(45deg) translateY(6.5px)';
-        line2.style.opacity = '0';
-        line3.style.transform = 'rotate(-45deg) translateY(-6.5px)';
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeMenu() {
-        menuOpen = false;
-        mobileMenu.style.transform = 'translateX(100%)';
-        line1.style.transform = 'rotate(0deg) translateY(0)';
-        line2.style.opacity = '1';
-        line3.style.transform = 'rotate(0deg) translateY(0)';
-        document.body.style.overflow = '';
-      }
-
-      if (menuBtn) {
-        menuBtn.addEventListener('click', () => menuOpen ? closeMenu() : openMenu());
-      }
-      
-      document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', closeMenu);
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && menuOpen) closeMenu();
-      });
-
-      // Navbar scroll shadow
-      window.addEventListener('scroll', () => {
-        const nav = document.getElementById('navbar');
-        nav.style.boxShadow = window.scrollY > 30 ? '0 10px 40px rgba(0, 0, 0, 0.6)' : 'none';
-      });
-    });
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

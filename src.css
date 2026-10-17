@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon: #37ff8b;
+  --color-blue: #4cc9f0;
+  --color-dark: #0b0f14;
+  --color-panel: #0f1520;
+
+  --font-space: "Space Grotesk", sans-serif;
+  --font-mono: "Fira Code", monospace;
+}
