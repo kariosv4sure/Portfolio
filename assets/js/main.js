@@ -1,41 +1,94 @@
-/* ============================================
-   Main JS — Ifeanyichukwu Collins Portfolio
-   Shared across all 4 pages. Page-specific
-   code is guarded so it no-ops on other pages.
-   ============================================ */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  gsap.registerPlugin(ScrollTrigger);
+  const hasGsap = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ============ HERO ANIMATIONS ============ */
-  if (document.querySelector('.hero-text')) {
-    gsap.from('.hero-text > *', {
-      opacity: 0, y: 30, stagger: 0.1, duration: 0.8, ease: "power3.out"
+  if (hasGsap) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  if (hasGsap && !prefersReducedMotion) {
+    const nav = document.getElementById('navbar');
+    const heroText = document.querySelector('.hero-text');
+    const heroImage = document.querySelector('.hero-image');
+
+    const entrance = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    if (nav) {
+      entrance.fromTo(nav, { autoAlpha: 0, y: -12 }, { autoAlpha: 1, y: 0, duration: 0.55 });
+    }
+    if (heroText) {
+      entrance.fromTo(
+        heroText.children,
+        { autoAlpha: 0, y: 22 },
+        { autoAlpha: 1, y: 0, duration: 0.65, stagger: 0.1 },
+        nav ? '-=0.25' : 0
+      );
+    }
+    if (heroImage) {
+      entrance.fromTo(
+        heroImage,
+        { autoAlpha: 0, x: 18, scale: 0.97 },
+        { autoAlpha: 1, x: 0, scale: 1, duration: 0.85 },
+        '-=0.55'
+      );
+      entrance.to(heroImage, {
+        y: -5,
+        duration: 2.8,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true
+      });
+    }
+
+    document.querySelectorAll('#about-preview, #projects-preview, #contact-preview').forEach(section => {
+      const heading = section.querySelector('.text-center.mb-12');
+      if (!heading) return;
+
+      gsap.fromTo(
+        heading.children,
+        { autoAlpha: 0, y: 18 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.65,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: { trigger: heading, start: 'top 84%', once: true }
+        }
+      );
     });
-  }
-  if (document.querySelector('.hero-image')) {
-    gsap.from('.hero-image', {
-      opacity: 0, scale: 0.8, duration: 1, ease: "power3.out", delay: 0.3
+
+    const cardSelector = '.about-card, .project-card, .card-glow-green, .card-glow-blue, .stat-card, .stat-item, .process-step';
+    const cardGroups = new Map();
+    gsap.utils.toArray(cardSelector).forEach(card => {
+      const parent = card.parentElement;
+      if (!cardGroups.has(parent)) cardGroups.set(parent, []);
+      cardGroups.get(parent).push(card);
     });
-  }
-  if (document.querySelector('.glow-avatar')) {
-    gsap.from('.glow-avatar', { scale: 0.8, opacity: 0, duration: 0.8, delay: 0.3 });
-  }
-  if (document.querySelector('.hero-badge')) {
-    gsap.from('.hero-badge', { opacity: 0, y: -20, duration: 0.6, delay: 0.2 });
-  }
-  if (document.querySelector('.hero-title')) {
-    gsap.from('.hero-title', { opacity: 0, y: 30, duration: 0.8, delay: 0.3 });
-  }
-  if (document.querySelector('.hero-desc')) {
-    gsap.from('.hero-desc', { opacity: 0, y: 20, duration: 0.6, delay: 0.5 });
+
+    cardGroups.forEach((cards, parent) => {
+      gsap.fromTo(
+        cards,
+        { autoAlpha: 0, y: 24 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.65,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: { trigger: parent, start: 'top 88%', once: true }
+        }
+      );
+    });
   }
 
   /* ============ TYPEWRITER (index only) ============ */
   const typeEl = document.getElementById('typewriter');
   if (typeEl) {
     const words = ["Ifeanyichukwu Collins", "a Full-Stack Dev", "an AI Engineer", "a Problem Solver"];
+    if (prefersReducedMotion) {
+      typeEl.textContent = words[0];
+    } else {
     let wordIdx = 0, charIdx = 0, deleting = false;
     function type() {
       const word = words[wordIdx];
@@ -49,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(type, deleting ? 35 : 75);
     }
     type();
+    }
   }
 
   /* ============ ANIMATED COUNTERS ============ */
@@ -56,6 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (counters.length) {
     function animateCounter(counter) {
       const target = parseInt(counter.getAttribute('data-target'));
+      if (prefersReducedMotion) {
+        counter.innerText = target;
+        return;
+      }
+
       let current = 0;
       const totalFrames = 130;
       const increment = target / totalFrames;
@@ -111,16 +170,27 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-    ScrollTrigger.create({
-      trigger: ".skill-bar-wrapper",
-      start: "top 80%",
-      once: true,
-      onEnter: () => animateSkills()
-    });
+    if (hasGsap && !prefersReducedMotion) {
+      ScrollTrigger.create({
+        trigger: ".skill-bar-wrapper",
+        start: "top 80%",
+        once: true,
+        onEnter: () => animateSkills()
+      });
+    } else {
+      skillBars.forEach(bar => {
+        bar.style.width = bar.getAttribute('data-skill') + '%';
+      });
+      percentSpans.forEach(span => {
+        const parentBar = span.closest('.skill-item')?.querySelector('.skill-bar-fill');
+        const targetVal = parentBar ? parseInt(parentBar.getAttribute('data-skill')) : 0;
+        span.innerText = targetVal + '%';
+      });
+    }
   }
 
   /* ============ TIMELINE (about only) ============ */
-  if (document.querySelector('.timeline-line')) {
+  if (hasGsap && !prefersReducedMotion && document.querySelector('.timeline-line')) {
     ScrollTrigger.create({
       trigger: ".timeline-line",
       start: "top 80%",
@@ -128,20 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
       onEnter: () => gsap.to("#timelineFill", { scaleY: 1, duration: 1.2, ease: "power2.out" })
     });
   }
-
-  /* ============ CARD STAGGER FADE-INS ============ */
-  gsap.utils.toArray('.about-card, .project-card, .card-glow-green, .card-glow-blue, .stat-card, .stat-item, .process-step').forEach((card, i) => {
-    gsap.fromTo(card,
-      { opacity: 0, y: 30 },
-      {
-        scrollTrigger: { trigger: card, start: 'top 88%', toggleActions: 'play none none none' },
-        opacity: 1, y: 0,
-        duration: 0.6,
-        delay: (i % 6) * 0.08,
-        ease: "power2.out"
-      }
-    );
-  });
 
   /* ============ PROJECT FILTERS (projects only) ============ */
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -156,7 +212,9 @@ document.addEventListener('DOMContentLoaded', () => {
         projectCards.forEach(card => {
           if (filter === 'all' || card.getAttribute('data-category') === filter) {
             card.classList.remove('hidden');
-            gsap.fromTo(card, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.3, delay: visibleCount * 0.05 });
+            if (hasGsap && !prefersReducedMotion) {
+              gsap.fromTo(card, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.3, delay: visibleCount * 0.05 });
+            }
             visibleCount++;
           } else {
             card.classList.add('hidden');
